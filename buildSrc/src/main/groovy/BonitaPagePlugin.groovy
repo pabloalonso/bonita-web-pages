@@ -1,5 +1,6 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.Copy
 
 class BonitaPagePlugin implements Plugin<Project> {
 
@@ -16,6 +17,7 @@ class BonitaPagePlugin implements Plugin<Project> {
 
             workDir = project.file("${currentDir}/.gradle/nodejs")
             npmWorkDir = project.file("${currentDir}/.gradle/npm")
+            nodeModulesDir = project.file("${project.buildDir}/npmBuildDir")
         }
 
         project.afterEvaluate {
@@ -27,13 +29,26 @@ class BonitaPagePlugin implements Plugin<Project> {
 
         project.tasks.npm_install.configure {
             inputs.files('package.json', 'package-lock.json')
-            outputs.dirs('node_modules')
+            outputs.dirs("${project.node.nodeModulesDir}/node_modules")
         }
+
+        def prepareBuild = project.task([type: Copy], 'prepareBuild') {
+            doFirst {
+                project.node.nodeModulesDir.mkdir()
+            }
+            from('.') {
+                exclude 'build'
+            }
+            into project.node.nodeModulesDir
+        }
+
+        project.tasks.npm_install.dependsOn prepareBuild
 
         def buildPage = project.task([type: com.moowork.gradle.node.npm.NpmTask, dependsOn: project.tasks.npm_install], 'buildPage') {
             args = ['run', 'build']
             inputs.files('package.json', 'package-lock.json')
             inputs.dir('src')
+            outputs.dirs("${project.node.nodeModulesDir}/dist")
         }
 
         project.tasks.distZip.dependsOn buildPage
@@ -50,7 +65,7 @@ class BonitaPagePlugin implements Plugin<Project> {
             main {
                 contents {
                     from('resources') { into '/' }
-                    from({ extension.frontendBuildDir }) {
+                    from("${project.node.nodeModulesDir}/dist") {
                         into '/resources'
                     }
                 }
