@@ -2,6 +2,7 @@ apply plugin: BonitaPagePlugin
 
 bonitaPage {
     frontendBuildDir = 'build'
+    sourceDirectories = ['public']
 }
 
 // Workaround to manage React-CLI non conventional build directory
