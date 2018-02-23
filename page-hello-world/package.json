@@ -21,6 +21,7 @@
   "dependencies": {
     "lodash": "^4.17.5",
     "primer": "^10.3.0",
-    "primer-buttons": "^2.5.3"
+    "primer-buttons": "^2.5.3",
+    "primer-layout": "^1.4.5"
   }
 }
