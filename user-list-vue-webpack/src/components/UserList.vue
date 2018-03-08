@@ -1,27 +1,27 @@
 <template>
-  <div class="hello">
+  <div class="user-list">
     <h1>{{ msg }}</h1>
     <ul>
-      <li v-bind:key="process.name" v-for="process in processes">
-        {{ process.displayName }}
+      <li v-bind:key="user.userName" v-for="user in users">
+        {{ user.userName }}
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import fetchProcesses from '@bonita/api/src/fetchProcesses.js'
+import fetchUsers from '@bonita/api/src/fetchUsers.js'
 export default {
-  name: 'HelloWorld',
+  name: 'Users',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      processes: []
+      users: []
     }
   },
   created () {
     // fetch the data when the view is created and the data is already being observed
-    fetchProcesses().then((processes) => { this.processes = processes })
+    fetchUsers().then((users) => { this.users = users })
   }
 }
 </script>
