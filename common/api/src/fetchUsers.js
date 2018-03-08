@@ -3,19 +3,15 @@ const options = {
   method: 'GET',
   credentials: 'same-origin', // automatically send cookies for the current domain
   headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    // 'Cookie': document.cookie,
-    'Access-Control-Allow-Origin': '*'
+    'Content-Type': 'application/json'
   },
   mode: 'cors',
   cache: 'default'
 }
 
-const url = '/bonita/API/identity/user?p=0&c=10&o=userName ASC&f=enabled=true'
-
 // return a promise with users as the first parameter
-export default function () {
+export default function (searchOptions) {
+  let url = `/bonita/API/identity/user?p=${searchOptions.page}&c=${searchOptions.elementsByPage}&o=userName ASC&f=enabled=true&s=${searchOptions.search}`;
   return fetch(url, options)
     .then(function (response) {
       if (response.ok) {

@@ -1,8 +1,5 @@
 <div class="user-list">
-  <h1>{{ msg }}</h1>
-  <ul>
-    <li v-bind:key="user.userName" v-for="user in users">
-      {{ user.userName }}
-    </li>
-  </ul>
+  <h1>{{ search }}</h1>
+  <b-table striped hover :items="users" :current-page="currentPage" :per-page="perPage"></b-table>
+  <b-pagination :total-rows="totalRows" :per-page="perPage" v-model="currentPage" />
 </div>
