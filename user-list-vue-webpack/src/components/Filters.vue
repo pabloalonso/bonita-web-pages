@@ -1,27 +1,25 @@
 <template>
   <div class="filters">
-    <h1>{{ msg }}</h1>
-    <ul>
-      <li v-bind:key="user.userName" v-for="user in userList">
-        {{ user.userName }}
-      </li>
-    </ul>
-  </div>
+    <h1>Search: </h1>
+    <input v-bind:value="searchFilter"
+           v-on:input="updateSearch($event.target.value)" >
+   </div>
 </template>
 
 <script>
 
 export default {
   name: 'Filters',
-  props: ['userList'],
+  props: ['search'],
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      usersList: []
+      searchFilter: this.search
     }
   },
-  created () {
-
+  methods: {
+    updateSearch: function (value) {
+      this.$emit('input', value)
+    }
   }
 }
 </script>

@@ -1,26 +1,22 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <Filters :userList="users"/>
-    <UserList/>
+    <Filters :search="searchQuery"
+             @input="search => { searchQuery = search }"/>
+    <UserList :search="searchQuery"/>
   </div>
 </template>
 
 <script>
 import UserList from './components/UserList/UserList'
 import Filters from './components/Filters'
-import fetchUsers from '@bonita/api/src/fetchUsers.js'
 
 export default {
   name: 'App',
   data () {
     return {
-      users: []
+      searchQuery: ''
     }
-  },
-  created () {
-    // fetch the data when the view is created and the data is already being observed
-    fetchUsers().then((users) => { this.users = users })
   },
   components: {
     UserList,

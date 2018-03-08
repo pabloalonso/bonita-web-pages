@@ -1,6 +1,7 @@
 import fetchUsers from '../../../../common/api/src/fetchUsers.js'
 export default {
   name: 'Users',
+  props: ['search'],
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
