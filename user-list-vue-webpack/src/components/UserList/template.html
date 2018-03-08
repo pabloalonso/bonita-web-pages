@@ -1,0 +1,8 @@
+<div class="user-list">
+  <h1>{{ msg }}</h1>
+  <ul>
+    <li v-bind:key="user.userName" v-for="user in users">
+      {{ user.userName }}
+    </li>
+  </ul>
+</div>

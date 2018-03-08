@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import UserList from './components/UserList'
+import UserList from './components/UserList/UserList'
 import Filters from './components/Filters'
 import fetchUsers from '@bonita/api/src/fetchUsers.js'
 
