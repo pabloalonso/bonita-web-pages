@@ -1,17 +1,30 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <Filters :userList="users"/>
     <UserList/>
   </div>
 </template>
 
 <script>
 import UserList from './components/UserList'
+import Filters from './components/Filters'
+import fetchUsers from '@bonita/api/src/fetchUsers.js'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      users: []
+    }
+  },
+  created () {
+    // fetch the data when the view is created and the data is already being observed
+    fetchUsers().then((users) => { this.users = users })
+  },
   components: {
-    UserList
+    UserList,
+    Filters
   }
 }
 </script>
