@@ -1,6 +1,6 @@
-# vuejs-webpack
+# user-list-vue-webpack
 
-> A Vue.js project
+> Bonita User List
 
 ## Build Setup
 

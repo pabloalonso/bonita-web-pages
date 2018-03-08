@@ -1,8 +1,8 @@
 {
-  "name": "vuejs-webpack",
+  "name": "user-list-vue-webpack",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "JonathanPiquard <piquard.jonathan@protonmail.com>",
+  "description": "Bonita User List",
+  "author": "anthony <anthony.birembaut@bonitasoft.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -15,8 +15,7 @@
   },
   "dependencies": {
     "@bonita/api": "file:../common/api",
-    "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

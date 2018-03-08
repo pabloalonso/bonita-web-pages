@@ -11,12 +11,11 @@
 
 <script>
 import fetchProcesses from '@bonita/api/src/fetchProcesses.js'
-
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Hello world with Vuejs',
+      msg: 'Welcome to Your Vue.js App',
       processes: []
     }
   },
@@ -27,9 +26,20 @@ export default {
 }
 </script>
 
-<style>
-  h1 {
-    font-size: 40px;
-    text-align: center;
-  }
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
 </style>
