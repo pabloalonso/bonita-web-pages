@@ -5,7 +5,6 @@ build-gradle/
 # Frontend
 node_modules/
 dist/
-build/
 
 # IDE
 .idea/
