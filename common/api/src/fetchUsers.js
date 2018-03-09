@@ -15,7 +15,9 @@ export default function (searchOptions) {
   return fetch(url, options)
     .then(function (response) {
       if (response.ok) {
-        return Promise.resolve(response.json())
+          return response.json().then(value => {
+              return {data: value, headers: response.headers};
+          })
       }
       return Promise.reject(response.error())
     })

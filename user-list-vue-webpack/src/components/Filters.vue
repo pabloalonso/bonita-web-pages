@@ -10,7 +10,7 @@ export default {
   name: 'Filters',
   data () {
     return {
-      search: 'test message'
+      search: ''
     }
   },
   methods: {

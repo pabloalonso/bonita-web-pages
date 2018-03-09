@@ -9,11 +9,9 @@ export default {
   },
   watch: {
     // whenever search changes, this function will run
-    search: function (newSearch, oldSearch) {
-      this.fetchUsers({search: newSearch});
-    },
-    currentPage: function () {
-      this.fetchUsers({search: this.search});
+    search: function () {
+      this.currentPage = 1;
+      this.$refs.usersTable.refresh();
     }
   },
   data () {
@@ -21,18 +19,27 @@ export default {
       users: [],
       currentPage: 1,
       perPage: 10,
-      totalRows: 20
+      totalRows: 200
     }
   },
-  created () {
-    // fetch the data when the view is created and the data is already being observed
-    this.fetchUsers({search: this.search});
-  },
   methods: {
-    fetchUsers (searchOptions){
+    tableProvider () {
+      let searchOptions = {};
+      searchOptions.search = this.search;
       searchOptions.page = this.currentPage -1;
       searchOptions.elementsByPage = this.perPage;
-      fetchUsers(searchOptions).then((users) => { this.users = users });
+      return fetchUsers(searchOptions).then((response) => {
+        let items = response.data;
+        let contentRange = response.headers.get('Content-Range');
+        if (contentRange.lastIndexOf('/') >= 0) {
+          let nbElements = contentRange.substring(contentRange.lastIndexOf('/') + 1);
+          if (nbElements) {
+            this.totalRows = Number.parseInt(nbElements);
+          }
+        }
+        // Must return an array of items or an empty array if an error occurred
+        return(items || [])
+      })
     }
   }
 
