@@ -7,5 +7,6 @@ bonitaPage {
 // Workaround to manage React-CLI non conventional build directory
 project.buildDir = 'build-gradle'
 project.tasks.buildPage.configure {
+    dependsOn ':common:buildCommon'
     inputs.dir('public')
 }

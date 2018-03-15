@@ -1,5 +1,20 @@
 {
   "name": "@bonita/api",
   "version": "1.0.0",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "babel-jest": "^21.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "jest": "^21.2.1",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "BABEL_ENV=rollup rollup -c"
+  }
 }
