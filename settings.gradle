@@ -6,6 +6,10 @@ pluginManagement {
     }
 }
 
+include 'common'
+include 'common:api'
+include 'common:bonita-theme'
+
 include 'page-process-list'
 include 'pages'
 include 'pages:page-hello-world'

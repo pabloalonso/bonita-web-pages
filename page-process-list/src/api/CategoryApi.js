@@ -1,4 +1,4 @@
-import { apiClient } from '../common';
+import { apiClient } from '@bonita/api';
 
 // I use a class syntax here but we can use a more functional approach if we want.
 class CategoryApi {

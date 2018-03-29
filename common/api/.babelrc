@@ -1,0 +1,18 @@
+{
+  "env": {
+    "test": {
+      "presets": ["latest"],
+      "plugins": ["transform-object-rest-spread"]
+    },
+    "rollup": {
+      "presets": [
+        ["latest", {
+          "es2015": {
+            "modules": false
+          }
+        }]
+      ],
+      "plugins": ["transform-object-rest-spread", "external-helpers"]
+    }
+  }
+}
