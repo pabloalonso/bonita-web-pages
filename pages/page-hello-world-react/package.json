@@ -4,8 +4,8 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@bonita/api": "file:../common/api",
-    "@bonita/bonita-theme": "file:../common/bonita-theme",
+    "@bonita/api": "file:../../common/api",
+    "@bonita/bonita-theme": "file:../../common/bonita-theme",
     "npm-run-all": "^4.1.2",
     "bootstrap": "^3.3.7",
     "react": "^16.2.0",

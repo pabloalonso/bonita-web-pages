@@ -7,8 +7,9 @@ pluginManagement {
 }
 
 include 'page-process-list'
-include 'page-hello-world'
-include 'page-hello-world-vuejs-webpack'
+include 'pages'
+include 'pages:page-hello-world'
+include 'pages:page-hello-world-vuejs-webpack'
 
 
 rootProject.name = 'bonita-web-pages'

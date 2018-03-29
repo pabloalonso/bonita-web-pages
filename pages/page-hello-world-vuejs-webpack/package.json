@@ -15,8 +15,8 @@
     "build-theme": "bonita-theme dist/index.html"
   },
   "dependencies": {
-    "@bonita/api": "file:../common/api",
-    "@bonita/bonita-theme": "file:../common/bonita-theme",
+    "@bonita/api": "file:../../common/api",
+    "@bonita/bonita-theme": "file:../../common/bonita-theme",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

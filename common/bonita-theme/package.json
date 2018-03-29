@@ -7,6 +7,8 @@
   },
   "bin": {
     "bonita-theme": "bin/bonita-theme.js"
+  },
+  "scripts": {
+    "build": "npm install"
   }
-
 }

@@ -15,6 +15,6 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "BABEL_ENV=rollup rollup -c"
+    "build": "cross-env BABEL_ENV=rollup rollup -c"
   }
 }
