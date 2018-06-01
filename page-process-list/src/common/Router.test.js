@@ -20,7 +20,7 @@ describe('Router', () => {
 
   const mockupUrl = {
     string: (page = 'main') =>
-      `http://localhost:3000/?tenant=France&locale=fr&app=bonita&s=pool#page:${page},process:{name:Pool,version:1.0,id:7544905540282516773},task:{name:preinstall}`,
+      `http://localhost:3000/?tenant=France&locale=fr&app=bonita&s=pool#page:"${page}",process:{name:"Pool",version:"1.0",id:"7544905540282516773"},task:{name:"preinstall"}`,
     object: (page = 'main') =>
       new Url({
         protocol: 'http:',
@@ -131,13 +131,15 @@ describe('Router', () => {
       'setWindowLocationHref'
     );
 
+    beforeEach(() => mockSetWindowLocationHref.mockClear());
+
     it('should add page (if not default) to fragments', () => {
       router.changePage('instantiation', {
         process: { name: 'Pool', version: '1.0', id: '8272570975552037895' }
       });
 
       expect(mockSetWindowLocationHref).toBeCalledWith(
-        'http://localhost/#page:instantiation,process:{name:Pool,version:1.0,id:8272570975552037895}'
+        'http://localhost/#page:"instantiation",process:{name:"Pool",version:"1.0",id:"8272570975552037895"}'
       );
     });
 
@@ -154,7 +156,7 @@ describe('Router', () => {
       });
 
       expect(mockSetWindowLocationHref).toBeCalledWith(
-        'http://localhost:3000/?tenant=France&locale=fr&app=bonita&s=pool#page:testPage,testFragment:{testParam:customParam}'
+        'http://localhost:3000/?tenant=France&locale=fr&app=bonita&s=pool#page:"testPage",testFragment:{testParam:"customParam"}'
       );
     });
   });

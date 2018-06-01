@@ -15,7 +15,12 @@ describe('Instantiation', () => {
       const wrapper = shallow(<Instantiation />);
 
       expect(wrapper.find('.Instantiation')).toHaveLength(1);
-      expect(wrapper.find({src: 'http://localhost/portal/resource/process/Pool%201/1.0/content/?id=8405256385576796210'})).toHaveLength(1);
+      expect(
+        wrapper.find({
+          src:
+            'http://localhost/portal/resource/process/Pool%201/1.0/content/?id=8405256385576796210'
+        })
+      ).toHaveLength(1);
     });
   });
 });

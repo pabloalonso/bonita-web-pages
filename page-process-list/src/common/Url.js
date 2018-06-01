@@ -1,5 +1,10 @@
 import assignIn from 'lodash.assignin'; // deep assign
 
+const isObjectEmpty = obj =>
+  !Object.keys(obj)
+    .filter(key => typeof obj[key] !== 'undefined')
+    .some(key => obj.hasOwnProperty(key));
+
 class Url {
   constructor(url, overridingProps = {}) {
     let props = url;
@@ -46,8 +51,9 @@ class Url {
   }
 
   static parseQueries(str) {
-    return str
-      .replace('?', '')
+    const parsedStr = str[0] === '?' ? str.substr(1) : str;
+
+    return parsedStr
       .replace(/\+/g, ' ')
       .split('&')
       .filter(param => param) // to have empty array if split on empty str
@@ -64,38 +70,39 @@ class Url {
   }
 
   static stringifyQueries(obj) {
-    const str = Object.keys(obj)
-      .map(key => [key, obj[key]])
-      .filter(([key, value]) => typeof value !== 'undefined')
-      .map(
-        ([key, value]) =>
-          !Array.isArray(value)
-            ? `${key}=${value}`
-            : value.map(element => `${key}=${element}`).join('&')
-      )
-      .join('&');
-
-    return !str ? null : `?${str}`;
+    return isObjectEmpty(obj)
+      ? null
+      : '?' +
+          Object.keys(obj)
+            .map(key => [key, obj[key]])
+            .filter(([key, value]) => typeof value !== 'undefined')
+            .map(
+              ([key, value]) =>
+                !Array.isArray(value)
+                  ? `${key}=${value}`
+                  : value
+                      .filter(element => typeof element !== 'undefined')
+                      .map(element => `${key}=${element}`)
+                      .join('&')
+            )
+            .join('&');
   }
 
   static parseFragments(str) {
-    const parsedStr = str
-      .replace('#', '')
-      .replace(/([a-zA-Z0-9_]*):/g, '"$1":')
-      .replace(/:([a-zA-Z0-9._]*)/g, (match, p1) => (p1 ? `:"${p1}"` : ':'))
-      .replace(/([[,])([a-zA-Z0-9._]*)([\],])/g, '$1"$2"$3')
-      .replace(/,([a-zA-Z0-9._]*),/g, ',"$1",')
-      .replace(/.*/, '{$&}');
+    let parsedStr = str[0] === '#' ? str.substr(1) : str;
+
+    parsedStr = `{${parsedStr}}`.replace(/([a-zA-Z0-9_]*):/g, '"$1":');
 
     return JSON.parse(parsedStr);
   }
 
   static stringifyFragments(obj) {
-    const str = JSON.stringify(obj)
-      .replace(/"/g, '') // remove all "
-      .slice(1, -1); // remove the two { and } that wrap the string
-
-    return !str ? null : `#${str}`;
+    return isObjectEmpty(obj)
+      ? null
+      : '#' +
+          JSON.stringify(obj)
+            .replace(/"([a-zA-Z0-9_]*)":/g, '$1:')
+            .slice(1, -1); // remove the two { and } that wrap the string
   }
 }
 
