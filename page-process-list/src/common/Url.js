@@ -93,10 +93,14 @@ class Url {
     let parsedStr = str[0] === '#' ? str.substr(1) : str;
 
     parsedStr = `{${parsedStr}}`
-      .replace(/([a-zA-Z0-9_]*):/g, '"$1":')
-      .replace(/:'([^]+)'/g, `:"$1"`)
-      .replace(/([[,])'([^]+)'([\],])/g, '$1"$2"$3')
-      .replace(/,'([^]+)',/g, ',"$1",');
+      // en général :
+      .replace(/([a-zA-Z0-9_]*):/g, '"$1":') // ajoute des guillemets à tous les *****: => "*****": // page:'main' => "page":'main'
+      .replace(/:'([^]+)'/g, `:"$1"`) // remplace les apostrophes par des guillemets des :'*****' => :"*****" // "page":'main' => "page":"main"
+
+      // pour les tableaux :
+      .replace(/([[,])'([^]+)'([\],])/g, '$1"$2"$3') // remplace les apostrophes par des guillemets des ['*****'] => ["*****"] || ['*****', => ["*****", || ,'*****', => ,"*****", || ,'*****'] => ,"*****"]
+      .replace(/,'([^]+)',/g, ',"$1",'); // remplace les apostrophes par des guillemets des ,'*****', => ,"*****", puisque le replace d'au-dessus n'y arrive pas bizarremment // array:["a",'b',"c"] => array:["a","b","c"]
+
     console.log('parsedStr', parsedStr);
 
     return JSON.parse(parsedStr);
@@ -108,7 +112,16 @@ class Url {
       : '#' +
         JSON.stringify(obj)
           .replace(/"([a-zA-Z0-9_]*)":/g, '$1:')
-          .replace(/"/g, "'")
+          .replace(/"/g, "'") //TODO pas assez bien, les " ne sont pas préservés dans les strings, e.i. page:"je chante "lalalala", seule parole du tube de l'été"
+          //il faut faire l'inverse de parseFragments :
+
+              // en général :
+              .replace(/:"([^]+)"/g, ":'$1'") // remplace les guillemets par des apostrophes des :"*****" => :'*****' // page:"main"=> page:'main'
+
+              // pour les tableaux :
+              .replace(/([[,])"([^]+)"([\],])/g, "$1'$2'$3") // remplace les guillemets par des apostrophes des ["*****"] => ['*****'] || ["*****", => ['*****', || ,"*****", => ,'*****', || ,"*****"] => ,'*****']
+              .replace(/,"([^]+)",/g, ",'$1',") // remplace les guillemets par des apostrophes des ,"*****", => ,'*****', puisque le replace d'au-dessus n'y arrive pas bizarremment // array:['a',"b",'c'] => array:['a','b','c']
+
           .slice(1, -1); // remove the two { and } that wrap the string
 
     console.log(value);
