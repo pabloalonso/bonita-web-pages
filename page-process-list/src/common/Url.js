@@ -94,12 +94,12 @@ class Url {
 
     parsedStr = `{${parsedStr}}`
       // en général :
-      .replace(/([a-zA-Z0-9_]*):/g, '"$1":') // ajoute des guillemets à tous les *****: => "*****": // page:'main' => "page":'main'
-      .replace(/:'([^]+)'/g, `:"$1"`) // remplace les apostrophes par des guillemets des :'*****' => :"*****" // "page":'main' => "page":"main"
+      .replace(/([a-zA-Z0-9_]*):/g, '"$1":') //Replace simple cote by Double cote for param name *****: => "*****": // page:'main' => "page":'main'
+      .replace(/:'([^'])'/g, `:"$1"`) // Replace simple cote by Double cote for string value :'*****' => :"*****" // "page":'main' => "page":"main"
 
-      // pour les tableaux :
-      .replace(/([[,])'([^]+)'([\],])/g, '$1"$2"$3') // remplace les apostrophes par des guillemets des ['*****'] => ["*****"] || ['*****', => ["*****", || ,'*****', => ,"*****", || ,'*****'] => ,"*****"]
-      .replace(/,'([^]+)',/g, ',"$1",'); // remplace les apostrophes par des guillemets des ,'*****', => ,"*****", puisque le replace d'au-dessus n'y arrive pas bizarremment // array:["a",'b',"c"] => array:["a","b","c"]
+      // For table :
+      .replace(/([[,])'([^]+)'([\],])/g, '$1"$2"$3') // Replace simple cote by Double cote for param name in table ['*****'] => ["*****"] || ['*****', => ["*****", || ,'*****', => ,"*****", || ,'*****'] => ,"*****"]
+      .replace(/,'([^]+)',/g, ',"$1",'); // Replace simple cote by Double cote for string value in table ,'*****', => ,"*****", // array:["a",'b',"c"] => array:["a","b","c"]
 
     console.log('parsedStr', parsedStr);
 
