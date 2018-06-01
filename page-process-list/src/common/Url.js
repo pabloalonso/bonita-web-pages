@@ -89,20 +89,30 @@ class Url {
   }
 
   static parseFragments(str) {
+    console.log('str', str);
     let parsedStr = str[0] === '#' ? str.substr(1) : str;
 
-    parsedStr = `{${parsedStr}}`.replace(/([a-zA-Z0-9_]*):/g, '"$1":');
+    parsedStr = `{${parsedStr}}`
+      .replace(/([a-zA-Z0-9_]*):/g, '"$1":')
+      .replace(/:'([^]+)'/g, `:"$1"`)
+      .replace(/([[,])'([^]+)'([\],])/g, '$1"$2"$3')
+      .replace(/,'([^]+)',/g, ',"$1",');
+    console.log('parsedStr', parsedStr);
 
     return JSON.parse(parsedStr);
   }
 
   static stringifyFragments(obj) {
-    return isObjectEmpty(obj)
+    const value = isObjectEmpty(obj)
       ? null
       : '#' +
-          JSON.stringify(obj)
-            .replace(/"([a-zA-Z0-9_]*)":/g, '$1:')
-            .slice(1, -1); // remove the two { and } that wrap the string
+        JSON.stringify(obj)
+          .replace(/"([a-zA-Z0-9_]*)":/g, '$1:')
+          .replace(/"/g, "'")
+          .slice(1, -1); // remove the two { and } that wrap the string
+
+    console.log(value);
+    return value;
   }
 }
 

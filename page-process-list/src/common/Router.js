@@ -25,6 +25,7 @@ class Router {
   }
 
   readUrl(url = this.getWindowLocationHref()) {
+    console.log('href', url);
     return new Url(url);
   }
 
