@@ -9,7 +9,7 @@ describe('Url', () => {
   };
   equivalences.fragments = {
     string:
-      '#a:"a",b:"2",c:3,array:["a","2",3,{a:"a",b:"2",c:3}],object:{a:"a",b:"2",c:3,array:["a","2",3],object:{a:"a",b:"2",c:3}}',
+      "#a:'a',b:'2',c:3,array:['a','2',3,{a:'a',b:'2',c:3}],object:{a:'a',b:'2',c:3,array:['a','2',3],object:{a:'a',b:'2',c:3}}",
     object: {
       a: 'a',
       b: '2',
@@ -161,13 +161,13 @@ describe('Url', () => {
       );
       expect(Url.parseFragments('')).toEqual({});
       expect(Url.parseFragments('#')).toEqual({});
-      expect(Url.parseFragments('string:"with space"')).toEqual({
+      expect(Url.parseFragments("string:'with space'")).toEqual({
         string: 'with space'
       });
-      expect(Url.parseFragments('string:"with #"')).toEqual({
+      expect(Url.parseFragments("string:'with #'")).toEqual({
         string: 'with #'
       });
-      expect(Url.parseFragments('#string:"with #"')).toEqual({
+      expect(Url.parseFragments("#string:'with #'")).toEqual({
         string: 'with #'
       });
     });
@@ -178,10 +178,10 @@ describe('Url', () => {
       );
       expect(Url.stringifyFragments({})).toEqual(null);
       expect(Url.stringifyFragments({ string: 'with space' })).toEqual(
-        '#string:"with space"'
+        "#string:'with space'"
       );
       expect(Url.stringifyFragments({ string: 'with #' })).toEqual(
-        '#string:"with #"'
+        "#string:'with #'"
       );
     });
   });
