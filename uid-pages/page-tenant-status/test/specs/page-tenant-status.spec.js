@@ -3,10 +3,10 @@ describe('page-tenant-status', () => {
     beforeEach(() => {
       cy.server();
 
-      cy.route('GET', 'build/dist/API/system/tenant/*', 'fixture:tenantRunning').as('tenantRunning');
-      cy.route('GET', 'build/dist/API/system/session/unusedId', 'fixture:noTechnicalUser').as('noTechnicalUser');
+      cy.route('GET', '**/API/system/tenant/*', 'fixture:tenantRunning').as('tenantRunning');
+      cy.route('GET', '**/API/system/session/unusedId', 'fixture:noTechnicalUser').as('noTechnicalUser');
 
-      cy.visit('build/dist/resources/index.html');
+      cy.visit('http://localhost:3001/bonita/preview/page/tenantStatusBonita/');
     });
 
     it('should display a blank page', () => {
@@ -21,13 +21,13 @@ describe('page-tenant-status', () => {
     beforeEach(() => {
       cy.setCookie('BOS_Locale', 'en');
       cy.server();
-      cy.route('GET', 'build/dist/API/system/session/unusedId', 'fixture:technicalUser').as('technicalUser');
+      cy.route('GET', '**/API/system/session/unusedId', 'fixture:technicalUser').as('technicalUser');
 
-      cy.visit('build/dist/resources/index.html');
+      cy.visit('http://localhost:3001/bonita/preview/page/tenantStatusBonita/');
     });
 
     it('should display a button to pause tenant when tenant is running', () => {
-      cy.route('GET', 'build/dist/API/system/tenant/*', 'fixture:tenantRunning').as('tenantRunning');
+      cy.route('GET', '**/API/system/tenant/*', 'fixture:tenantRunning').as('tenantRunning');
       cy.wait(['@tenantRunning', '@technicalUser']);
 
 
@@ -36,7 +36,7 @@ describe('page-tenant-status', () => {
     });
 
     it('should display a button to resume tenant when tenant is paused', () => {
-      cy.route('GET', 'build/dist/API/system/tenant/*', 'fixture:tenantPaused').as('tenantPaused');
+      cy.route('GET', '**/API/system/tenant/*', 'fixture:tenantPaused').as('tenantPaused');
       cy.wait(['@tenantPaused', '@technicalUser']);
 
       cy.get('.ng-binding').should('have.text','RESUME');
