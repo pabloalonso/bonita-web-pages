@@ -2,7 +2,7 @@
   "designerVersion" : "1.7.61",
   "id" : "tenantStatusBonita",
   "name" : "tenantStatusBonita",
-  "lastUpdate" : 1541691958657,
+  "lastUpdate" : 1541694152548,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -53,7 +53,7 @@
     "reference" : "2ee379a1-0571-43dc-8873-d0780f3d4e70",
     "id" : "pbContainer",
     "rows" : [ [ {
-      "type" : "component",
+      "type" : "modalContainer",
       "dimension" : {
         "xs" : 12
       },
@@ -61,139 +61,143 @@
         "cssClasses" : {
           "type" : "constant",
           "value" : ""
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "disabled" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "label" : {
-          "type" : "interpolation",
-          "value" : "Test me"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "left"
-        },
-        "buttonStyle" : {
-          "type" : "constant",
-          "value" : "default"
-        },
-        "action" : {
-          "type" : "constant",
-          "value" : "GET"
-        },
-        "url" : {
-          "type" : "interpolation",
-          "value" : "http://localhost:3000/open-tests"
-        },
-        "dataToSend" : {
-          "type" : "constant"
-        },
-        "dataFromSuccess" : {
-          "type" : "variable",
-          "value" : ""
-        },
-        "closeOnSuccess" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "dataFromError" : {
-          "type" : "variable",
-          "value" : ""
-        },
-        "targetUrlOnSuccess" : {
-          "type" : "interpolation"
-        },
-        "collectionToModify" : {
-          "type" : "variable"
         },
         "modalId" : {
           "type" : "constant",
+          "value" : "test"
+        },
+        "size" : {
+          "type" : "constant",
           "value" : ""
         },
-        "collectionPosition" : {
+        "animation" : {
           "type" : "constant",
-          "value" : "Last"
-        },
-        "valueToAdd" : {
-          "type" : "constant"
-        },
-        "removeItem" : {
-          "type" : "variable"
+          "value" : true
         }
       },
-      "reference" : "4115befc-051b-4f4e-aeee-34a3df958bc8",
-      "id" : "pbButton"
+      "reference" : "7d79771e-de96-4792-8d02-b2b85913ad60",
+      "id" : "pbModalContainer",
+      "container" : {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : { },
+        "reference" : "e434be87-702b-43be-b715-d67a92f9ef6f",
+        "id" : "pbContainer",
+        "rows" : [ [ {
+          "type" : "component",
+          "dimension" : {
+            "xs" : 12
+          },
+          "propertyValues" : {
+            "cssClasses" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "hidden" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "srcType" : {
+              "type" : "constant",
+              "value" : "Asset"
+            },
+            "url" : {
+              "type" : "constant"
+            },
+            "assetName" : {
+              "type" : "constant",
+              "value" : "TestMe.jpg"
+            },
+            "alt" : {
+              "type" : "interpolation"
+            }
+          },
+          "reference" : "3174c7b8-3d13-4294-8c2d-82ba36dc78da",
+          "id" : "pbImage"
+        } ], [ {
+          "type" : "component",
+          "dimension" : {
+            "xs" : 12
+          },
+          "propertyValues" : {
+            "cssClasses" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "hidden" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "disabled" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "label" : {
+              "type" : "interpolation",
+              "value" : "Test me"
+            },
+            "alignment" : {
+              "type" : "constant",
+              "value" : "center"
+            },
+            "buttonStyle" : {
+              "type" : "constant",
+              "value" : "primary"
+            },
+            "action" : {
+              "type" : "constant",
+              "value" : "GET"
+            },
+            "url" : {
+              "type" : "interpolation",
+              "value" : "http://localhost:3000/open-tests"
+            },
+            "dataToSend" : {
+              "type" : "constant"
+            },
+            "dataFromSuccess" : {
+              "type" : "variable",
+              "value" : ""
+            },
+            "closeOnSuccess" : {
+              "type" : "constant",
+              "value" : false
+            },
+            "dataFromError" : {
+              "type" : "variable",
+              "value" : ""
+            },
+            "targetUrlOnSuccess" : {
+              "type" : "interpolation"
+            },
+            "collectionToModify" : {
+              "type" : "variable"
+            },
+            "modalId" : {
+              "type" : "constant",
+              "value" : ""
+            },
+            "collectionPosition" : {
+              "type" : "constant",
+              "value" : "Last"
+            },
+            "valueToAdd" : {
+              "type" : "constant"
+            },
+            "removeItem" : {
+              "type" : "variable"
+            }
+          },
+          "reference" : "f8031f78-e180-4363-be69-ddbf5839dd70",
+          "id" : "pbButton"
+        } ] ]
+      }
     } ], [ {
       "type" : "component",
       "dimension" : {
-        "xs" : 12
-      },
-      "propertyValues" : {
-        "cssClasses" : {
-          "type" : "constant",
-          "value" : "test-me"
-        },
-        "hidden" : {
-          "type" : "constant",
-          "value" : false
-        },
-        "text" : {
-          "type" : "interpolation",
-          "value" : "Link"
-        },
-        "type" : {
-          "type" : "constant",
-          "value" : "URL"
-        },
-        "targetUrl" : {
-          "type" : "constant",
-          "value" : "http://"
-        },
-        "pageToken" : {
-          "type" : "constant"
-        },
-        "processName" : {
-          "type" : "constant"
-        },
-        "processVersion" : {
-          "type" : "constant"
-        },
-        "taskId" : {
-          "type" : "constant"
-        },
-        "caseId" : {
-          "type" : "constant"
-        },
-        "target" : {
-          "type" : "constant",
-          "value" : "_self"
-        },
-        "appToken" : {
-          "type" : "constant"
-        },
-        "urlParams" : {
-          "type" : "constant"
-        },
-        "alignment" : {
-          "type" : "constant",
-          "value" : "left"
-        },
-        "buttonStyle" : {
-          "type" : "constant",
-          "value" : "link"
-        }
-      },
-      "reference" : "a7cce12d-f77f-40dd-943b-31ea8a6591f3",
-      "id" : "pbLink"
-    } ], [ {
-      "type" : "component",
-      "dimension" : {
-        "xs" : 12,
+        "xs" : 6,
         "lg" : 12,
         "md" : 12,
         "sm" : 12
@@ -1044,13 +1048,10 @@
         } ] ]
       }
     } ] ]
-  }, {
-    "type" : "container",
+  } ], [ {
+    "type" : "component",
     "dimension" : {
-      "xs" : 3,
-      "sm" : 1,
-      "md" : 2,
-      "lg" : 3
+      "xs" : 12
     },
     "propertyValues" : {
       "cssClasses" : {
@@ -1061,14 +1062,67 @@
         "type" : "constant",
         "value" : false
       },
-      "repeatedCollection" : {
+      "disabled" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "label" : {
+        "type" : "interpolation",
+        "value" : "Test me i'm famous"
+      },
+      "alignment" : {
+        "type" : "constant",
+        "value" : "center"
+      },
+      "buttonStyle" : {
+        "type" : "constant",
+        "value" : "danger"
+      },
+      "action" : {
+        "type" : "constant",
+        "value" : "Open modal"
+      },
+      "url" : {
+        "type" : "interpolation"
+      },
+      "dataToSend" : {
+        "type" : "constant"
+      },
+      "dataFromSuccess" : {
         "type" : "variable",
         "value" : ""
+      },
+      "closeOnSuccess" : {
+        "type" : "constant",
+        "value" : false
+      },
+      "dataFromError" : {
+        "type" : "variable",
+        "value" : ""
+      },
+      "targetUrlOnSuccess" : {
+        "type" : "interpolation"
+      },
+      "collectionToModify" : {
+        "type" : "variable"
+      },
+      "modalId" : {
+        "type" : "constant",
+        "value" : "test"
+      },
+      "collectionPosition" : {
+        "type" : "constant",
+        "value" : "Last"
+      },
+      "valueToAdd" : {
+        "type" : "constant"
+      },
+      "removeItem" : {
+        "type" : "variable"
       }
     },
-    "reference" : "ba5a4978-555b-4a41-88e4-5a868df47833",
-    "id" : "pbContainer",
-    "rows" : [ [ ] ]
+    "reference" : "a564619e-d3ce-4029-b4ae-4cfaeee0d135",
+    "id" : "pbButton"
   } ] ],
   "assets" : [ {
     "id" : "9c263032-7532-41a0-9c1b-65bf6bc78a49",
@@ -1087,6 +1141,12 @@
     "name" : "paused.jpg",
     "type" : "img",
     "order" : 2,
+    "external" : false
+  }, {
+    "id" : "d0b609fb-81ba-4702-ae86-bbedff03ac23",
+    "name" : "TestMe.jpg",
+    "type" : "img",
+    "order" : 4,
     "external" : false
   }, {
     "id" : "9d38d1cd-f18c-433d-b139-cc187011e44c",
