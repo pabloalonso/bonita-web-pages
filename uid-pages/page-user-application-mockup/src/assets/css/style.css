@@ -1,0 +1,132 @@
+/* Add margin bottom and top to each widgets */
+.component {
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+/* Set cursor to pointer on table with selectable rows */
+.table-hover tr {
+    cursor: pointer;
+}
+
+/* Set a red border to invalid input fields in forms */
+input[type='text'].ng-invalid.ng-dirty, input[type='email'].ng-invalid.ng-dirty,
+input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-dirty {
+  border-color: #C00;
+  border-width: 1px;
+}
+
+/* Add a red star after required inputs */
+.control-label--required:after {
+  content: "*";
+  color: #C00;
+}
+.btn-invalid{
+    border-color: #C00;
+    border-width: 1px;
+}
+
+.bonita-modal{
+    overflow-y: auto;
+}
+
+.modal-open .datepicker,
+.modal-open .timepicker {
+    z-index: 9999;
+}
+
+/* Custom CSS */
+
+.no-border{
+    border: none;
+}
+
+.no-padding{
+    padding: 0;
+}
+
+.pt-1{
+    padding-top: 1em;
+}
+
+.padding-x-0{
+    padding-left: 0;
+    padding-right:0;
+}
+
+.pl-1{
+    padding-left: 1em;
+}
+
+.padding-2{
+    padding: 2em;
+}
+
+.startButton{
+    height: auto;
+    width: 10%;
+    opacity: 0.5;
+}
+
+.font-size-12{
+    font-size: 12px;
+}
+
+.border-1{
+    border: 1px solid #ddd;
+}
+
+.lableForSelect{
+    color: #7f6a6a;
+    /*opacity: 0.6;*/
+}
+
+.itemContainer{
+    pointer-events: none;
+}
+
+.infinite-scroll-dashboard,
+.infinite-scroll-finder{
+    overflow-y: auto;
+}
+
+.infinite-scroll-dashboard{
+    height: 70vh;
+}
+
+.infinite-scroll-finder{
+    height: 55vh;
+}
+
+.itemContainer > * {
+    border-radius: 5px;
+    background: #fff;
+    padding: 0.6rem 1rem;
+    opacity: 0.9;
+    pointer-events: auto;
+    transition: 300ms opacity, 300ms transform;
+}
+
+.app-item {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  /*  border: 1px solid lightgray; */
+    overflow: hidden;
+    /*height: 4.5em;*/
+}
+
+.app-item:hover{
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+     background: #f8f8f8;
+}
+
+.label{
+    color: #7f6a6a;
+    font-size: 0.8em;
+    opacity:0.6;
+    padding: 0;
+}
+
+.clearButton button{
+    margin-left: -3em;
+}
