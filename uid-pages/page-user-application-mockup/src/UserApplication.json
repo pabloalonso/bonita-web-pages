@@ -2,7 +2,7 @@
   "designerVersion" : "1.10.6",
   "id" : "userApplication",
   "name" : "userApplication",
-  "lastUpdate" : 1567672283835,
+  "lastUpdate" : 1567673806027,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -5172,8 +5172,8 @@
                   "dimension" : {
                     "xs" : 12,
                     "sm" : 12,
-                    "md" : 4,
-                    "lg" : 6
+                    "md" : 3,
+                    "lg" : 4
                   },
                   "propertyValues" : {
                     "cssClasses" : {
@@ -5316,8 +5316,8 @@
                   "dimension" : {
                     "xs" : 12,
                     "sm" : 12,
-                    "md" : 8,
-                    "lg" : 6
+                    "md" : 9,
+                    "lg" : 8
                   },
                   "propertyValues" : {
                     "cssClasses" : {
@@ -5552,7 +5552,7 @@
                       "xs" : 12,
                       "sm" : 3,
                       "md" : 3,
-                      "lg" : 3
+                      "lg" : 4
                     },
                     "propertyValues" : {
                       "cssClasses" : {
@@ -5680,7 +5680,7 @@
                       "xs" : 12,
                       "sm" : 4,
                       "md" : 4,
-                      "lg" : 4
+                      "lg" : 3
                     },
                     "propertyValues" : {
                       "cssClasses" : {
@@ -6045,12 +6045,12 @@
                       "xs" : 2,
                       "sm" : 2,
                       "md" : 2,
-                      "lg" : 2
+                      "lg" : 1
                     },
                     "propertyValues" : {
                       "cssClasses" : {
                         "type" : "constant",
-                        "value" : ""
+                        "value" : "col-lg-offset-0 col-md-offset-0 col-sm-offset-1 col-xs-offset-2"
                       },
                       "hidden" : {
                         "type" : "constant",
@@ -6123,7 +6123,7 @@
                         "type" : "variable"
                       }
                     },
-                    "reference" : "fb37110f-7cf4-4309-8b40-2b714f1cfbed",
+                    "reference" : "69986903-cdad-44aa-9b0d-f4e029df86a4",
                     "hasValidationError" : false,
                     "id" : "customResetButton"
                   } ] ]
