@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "UserCaseList",
   "name" : "UserCaseList",
-  "lastUpdate" : 1567700067894,
+  "lastUpdate" : 1567777987445,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -570,15 +570,15 @@
                 "rows" : [ [ {
                   "type" : "component",
                   "dimension" : {
-                    "xs" : 2,
-                    "sm" : 1,
-                    "md" : 1,
-                    "lg" : 1
+                    "xs" : 12,
+                    "sm" : 12,
+                    "md" : 12,
+                    "lg" : 12
                   },
                   "propertyValues" : {
                     "cssClasses" : {
                       "type" : "constant",
-                      "value" : "panel-body col-lg-offset-10 col-md-offset-10 col-sm-offset-10 col-xs-offset-8"
+                      "value" : "panel-body"
                     },
                     "hidden" : {
                       "type" : "constant",
@@ -654,13 +654,13 @@
                   "reference" : "ab2d9bbc-cda1-4a9f-aa15-5293a0c349cb",
                   "hasValidationError" : false,
                   "id" : "pbButton"
-                }, {
+                } ], [ {
                   "type" : "component",
                   "dimension" : {
-                    "xs" : 1,
-                    "sm" : 1,
-                    "md" : 1,
-                    "lg" : 1
+                    "xs" : 12,
+                    "sm" : 12,
+                    "md" : 12,
+                    "lg" : 12
                   },
                   "propertyValues" : {
                     "cssClasses" : {
@@ -669,7 +669,7 @@
                     },
                     "hidden" : {
                       "type" : "constant",
-                      "value" : false
+                      "value" : true
                     },
                     "disabled" : {
                       "type" : "constant",
@@ -828,7 +828,7 @@
                       "propertyValues" : {
                         "cssClasses" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : "text-center"
                         },
                         "hidden" : {
                           "type" : "constant",
@@ -895,7 +895,7 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 3,
+                        "xs" : 4,
                         "sm" : 3,
                         "md" : 4,
                         "lg" : 3
@@ -906,8 +906,8 @@
                           "value" : ""
                         },
                         "hidden" : {
-                          "type" : "constant",
-                          "value" : false
+                          "type" : "expression",
+                          "value" : ""
                         },
                         "repeatedCollection" : {
                           "type" : "variable",
@@ -1031,11 +1031,11 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"case-property-label\">Version</div>\n<div class=\"case-property-text\">\n{{$item.version}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">Version</div>\n<div class=\"case-property-text text-center\">\n{{$item.version}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
-                            "value" : "left"
+                            "value" : "center"
                           }
                         },
                         "reference" : "678872c8-5420-434f-ae37-4dccd46df94c",
@@ -1128,7 +1128,7 @@
                       "propertyValues" : {
                         "cssClasses" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : "hidden-xs"
                         },
                         "hidden" : {
                           "type" : "constant",
@@ -1260,10 +1260,1411 @@
                           },
                           "alignment" : {
                             "type" : "constant",
-                            "value" : "left"
+                            "value" : "center"
                           }
                         },
                         "reference" : "18df8ffd-21e1-45be-960a-c2a9330182a2",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    } ], [ {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey1 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "2986b089-bdcb-4f0d-a9c1-7279065f0247",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 1</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "4cfde15d-f6a0-422a-a4ba-238398c110e1",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey2 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "e033dae7-7042-4894-bef5-d70ce20fa06a",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search Key 2</div>\n<div class=\"case-property-text\">\n{{$item.searchKey2}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "756c28da-5f63-4263-9bad-f355f96b312a",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey3 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "25bc746d-d4ad-4a0d-9b75-29ec174436f7",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search Key 3</div>\n<div class=\"case-property-text\">\n{{$item.searchKey3}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "61f777fb-9c85-4fc6-939d-51d3f12bbba6",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey4 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "851d6a66-417a-4557-93bc-733b4a9d4fbc",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search Key 4</div>\n<div class=\"case-property-text\">\n{{$item.searchKey4}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "5136f3db-213e-4b43-826a-5fafa62f18c1",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey5 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "3277a54a-2c03-4219-b83b-0cd4e0814e87",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "expression",
+                            "value" : ""
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search Key 5</div>\n<div class=\"case-property-text\">\n{{$item.searchKey5}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "e21f4ddd-10d3-41fa-bf63-a14dd6e4ad9c",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey6 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "6d6ff291-6b2f-4ba2-9d0d-f68f785f2a37",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search Key 6</div>\n<div class=\"case-property-text\">\n{{$item.searchKey6}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "314b1792-1157-47d0-9bb8-25354b7ca995",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    } ] ]
+                  } ] ]
+                } ], [ {
+                  "type" : "container",
+                  "dimension" : {
+                    "xs" : 12,
+                    "sm" : 12,
+                    "md" : 12,
+                    "lg" : 12
+                  },
+                  "propertyValues" : {
+                    "cssClasses" : {
+                      "type" : "constant",
+                      "value" : "itemContainer"
+                    },
+                    "hidden" : {
+                      "type" : "constant",
+                      "value" : false
+                    },
+                    "repeatedCollection" : {
+                      "type" : "variable",
+                      "value" : "openCases_3"
+                    }
+                  },
+                  "reference" : "4c49a040-317a-4038-8b79-e1b1bb114f5d",
+                  "hasValidationError" : false,
+                  "id" : "pbContainer",
+                  "rows" : [ [ {
+                    "type" : "container",
+                    "dimension" : {
+                      "xs" : 12,
+                      "sm" : 12,
+                      "md" : 12,
+                      "lg" : 12
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "app-item"
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "repeatedCollection" : {
+                        "type" : "variable",
+                        "value" : ""
+                      }
+                    },
+                    "reference" : "b87a33c5-af86-43a0-98c2-fec1b8a4212a",
+                    "hasValidationError" : false,
+                    "id" : "pbContainer",
+                    "rows" : [ [ {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 1,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "66e5b17b-952a-415c-98a6-bc5625c69f35",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Case ID</div>\n<div class=\"case-property-text\">\n{{$item.caseID}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "03d14c81-30a1-4740-a52f-5bc0b22acaed",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 4,
+                        "sm" : 3,
+                        "md" : 4,
+                        "lg" : 3
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "d54452ed-1c40-4d9e-8975-4b9b67a12df9",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Process Name</div>\n<div class=\"case-property-text\">\n{{$item.processName}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "0d965012-d930-4642-b2df-e4579a61f94a",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 1,
+                        "md" : 1,
+                        "lg" : 1
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "42fdcf39-68dc-4b0c-848b-23d4d682b12f",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Version</div>\n<div class=\"case-property-text text-center\">\n{{$item.version}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "center"
+                          }
+                        },
+                        "reference" : "cda0683c-9646-4146-9cd3-662eadee097e",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "127fa45f-50a8-4e9a-8343-fa3f6a6203f5",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Start date</div>\n<div class=\"case-property-text\">\n{{$item.startDate}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "c7e571e2-ac39-4255-9854-19521438bc02",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 2,
+                        "sm" : 3,
+                        "md" : 3,
+                        "lg" : 3
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : "hidden-xs"
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "0beabcc3-4ccb-4c65-ad8c-d80ac4e8e1f0",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Started by</div>\n<div class=\"case-property-text\">\n{{$item.startedBy}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "ec28472b-273c-4676-9a3c-d8f50e6be09e",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 1,
+                        "sm" : 1,
+                        "md" : 1,
+                        "lg" : 1
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "9b15feae-0e75-4454-8bb0-1f057cd8b7de",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Tasks</div>\n<div class=\"case-property-text\">\n{{$item.availableTasks}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "center"
+                          }
+                        },
+                        "reference" : "68bbdaf3-0cd8-45ca-9a28-b7f90d4fdd4b",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    } ], [ {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey1 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "cbd9b965-ec4b-4f0b-a1a1-c1a226b7661b",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 1</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "9b610c73-0a63-4612-88e1-a367c2df518b",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey2 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "605322af-499d-474f-b118-b926626cb3cf",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 2</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "07378ea5-7ee3-4ec7-afb9-2628b6bf2e4a",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey3 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "9888f71a-879e-4c55-bdd0-84bc0f8793b7",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 3</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "0c98f26b-db99-4bc8-9fa2-b7488c5ecfcb",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey4 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "0a941e51-1be5-41f0-aead-ebf6047f4749",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 4</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "d2ced878-582e-4a47-8480-7f5eb6cbe742",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey5 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "0d5b3151-b20f-41f2-ab7c-8735d8ff32e7",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 5</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "4afe7583-1853-4312-a21a-c4e4d5014a24",
+                        "hasValidationError" : false,
+                        "id" : "pbText"
+                      } ] ]
+                    }, {
+                      "type" : "container",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 2,
+                        "lg" : 2
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "expression",
+                          "value" : "$item.searchKey6 == \"\""
+                        },
+                        "repeatedCollection" : {
+                          "type" : "variable",
+                          "value" : ""
+                        }
+                      },
+                      "reference" : "4fc770b0-f571-42e7-a026-6312742d3394",
+                      "hasValidationError" : false,
+                      "id" : "pbContainer",
+                      "rows" : [ [ {
+                        "type" : "component",
+                        "dimension" : {
+                          "xs" : 12,
+                          "sm" : 12,
+                          "md" : 12,
+                          "lg" : 12
+                        },
+                        "propertyValues" : {
+                          "cssClasses" : {
+                            "type" : "constant",
+                            "value" : ""
+                          },
+                          "hidden" : {
+                            "type" : "constant",
+                            "value" : false
+                          },
+                          "labelHidden" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "label" : {
+                            "type" : "interpolation",
+                            "value" : "Default label"
+                          },
+                          "labelPosition" : {
+                            "type" : "constant",
+                            "value" : "top"
+                          },
+                          "labelWidth" : {
+                            "type" : "constant",
+                            "value" : 4
+                          },
+                          "allowHTML" : {
+                            "type" : "constant",
+                            "value" : true
+                          },
+                          "text" : {
+                            "type" : "interpolation",
+                            "value" : "<div class=\"case-property-label\">Search key 6</div>\n<div class=\"case-property-text\">\n{{$item.searchKey1}}\n</div>"
+                          },
+                          "alignment" : {
+                            "type" : "constant",
+                            "value" : "left"
+                          }
+                        },
+                        "reference" : "99b9804b-72ff-4f66-b9a2-18ab21fc66c7",
                         "hasValidationError" : false,
                         "id" : "pbText"
                       } ] ]
@@ -4088,7 +5489,7 @@
     },
     "openCases_2" : {
       "type" : "json",
-      "value" : "[\n    {\n        \"caseID\": 2,\n        \"processName\": \"Long process name Long process name Long process nameLong process name\",\n        \"version\": \"1.0\",\n        \"startDate\": \"30/07/2019\",\n        \"startedBy\": \"Nathalie Cotte Nathalie Cotte Nathalie Cotte\",\n        \"availableTasks\": 1,\n        \"color\": \"Silver\",\n        \"price\": \"\",\n        \"company\": \"Dell\",\n        \"category\": \"Laptop\",\n        \"model\": \"\"\n    }\n]",
+      "value" : "[\n    {\n        \"caseID\": 2,\n        \"processName\": \"Long process name Long process name Long process nameLong process name\",\n        \"version\": \"1.0\",\n        \"startDate\": \"30/07/2019\",\n        \"startedBy\": \"Nathalie Cotte Nathalie Cotte Nathalie Cotte\",\n        \"availableTasks\": 1,\n        \"color\": \"Silver\",\n        \"price\": \"\",\n        \"company\": \"Dell\",\n        \"category\": \"Laptop\",\n        \"model\": \"\",\n        \"searchKey1\": \"Search Key 1\",\n        \"searchKey2\": \"Search Key 2\",\n        \"searchKey3\": \"Search Key 3\",\n        \"searchKey4\": \"Search Key 4\",\n        \"searchKey5\": \"Search Key 5\",\n        \"searchKey6\": \"Search Key 6\"\n    }\n]",
       "exposed" : false
     },
     "test" : {
@@ -4144,6 +5545,11 @@
     "startedBy" : {
       "type" : "json",
       "value" : "[\r\n    {\r\n        \"firstName\": \"Anthony\",\r\n        \"lastName\": \"Birembaut\"\r\n    },\r\n    {\r\n        \"firstName\": \"Julien\",\r\n        \"lastName\": \"Mege\"\r\n    },\r\n    {\r\n        \"firstName\": \"Nathalie\",\r\n        \"lastName\": \"Cotte\"\r\n    },\r\n    {\r\n        \"firstName\": \"Dumitru\",\r\n        \"lastName\": \"Corini\"\r\n    }\r\n]",
+      "exposed" : false
+    },
+    "openCases_3" : {
+      "type" : "json",
+      "value" : "[\n    {\n        \"caseID\": 3,\n        \"processName\": \"Vacation Request Management Process\",\n        \"version\": \"1.0\",\n        \"startDate\": \"30/09/2019\",\n        \"startedBy\": \"Bishal Kumar Thapaliya\",\n        \"availableTasks\": 1,\n        \"color\": \"Silver\",\n        \"price\": \"\",\n        \"company\": \"Bonitasoft\",\n        \"category\": \"R&D\",\n        \"model\": \"\",\n        \"searchKey1\": \"\",\n        \"searchKey2\": \"\",\n        \"searchKey3\": \"\",\n        \"searchKey4\": \"\",\n        \"searchKey5\": \"\",\n        \"searchKey6\": \"\"\n    }\n]",
       "exposed" : false
     }
   },
