@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "UserCaseList",
   "name" : "UserCaseList",
-  "lastUpdate" : 1568107206881,
+  "lastUpdate" : 1568107850285,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -5367,14 +5367,15 @@
                     },
                     "action" : {
                       "type" : "constant",
-                      "value" : "Submit task"
+                      "value" : "GET"
                     },
                     "assign" : {
                       "type" : "constant",
                       "value" : false
                     },
                     "url" : {
-                      "type" : "interpolation"
+                      "type" : "interpolation",
+                      "value" : "{{archivedCaseAPIURL}}"
                     },
                     "responseStatusCode" : {
                       "type" : "variable",
@@ -5385,7 +5386,7 @@
                     },
                     "dataFromSuccess" : {
                       "type" : "variable",
-                      "value" : ""
+                      "value" : "archivedCaseAPI"
                     },
                     "closeOnSuccess" : {
                       "type" : "constant",
@@ -5416,9 +5417,9 @@
                       "type" : "variable"
                     }
                   },
-                  "reference" : "fcd128c8-54f0-4317-b75b-72a3ea546273",
+                  "reference" : "52f401ba-308c-445d-8761-a467f27f9474",
                   "hasValidationError" : false,
-                  "id" : "customRefreshButton"
+                  "id" : "pbButton"
                 } ] ]
               } ], [ {
                 "type" : "container",
@@ -5563,7 +5564,7 @@
                           },
                           "alignment" : {
                             "type" : "constant",
-                            "value" : "center"
+                            "value" : "left"
                           }
                         },
                         "reference" : "b9359476-3052-44e0-aac4-c115714e2277",
@@ -5638,7 +5639,7 @@
                           },
                           "alignment" : {
                             "type" : "constant",
-                            "value" : "center"
+                            "value" : "left"
                           }
                         },
                         "reference" : "b94f2da7-ed16-4238-b922-981adf5f1bed",
@@ -7555,12 +7556,17 @@
     },
     "archivedCaseAPI" : {
       "type" : "url",
-      "value" : "../API/bpm/archivedCase?c=25&d=processDefinitionId&d=started_by&d=startedBySubstitute&f=user_id%3D4&o=sourceObjectId+DESC",
+      "value" : "{{archivedCaseAPIURL}}",
       "exposed" : false
     },
     "openCaseAPIURL" : {
       "type" : "constant",
       "value" : "../API/bpm/case?c=25&d=processDefinitionId&d=started_by&n=activeFlowNodes&n=failedFlowNodes",
+      "exposed" : false
+    },
+    "archivedCaseAPIURL" : {
+      "type" : "constant",
+      "value" : "../API/bpm/archivedCase?c=25&d=processDefinitionId&d=started_by&d=startedBySubstitute&f=user_id%3D4&o=sourceObjectId+DESC",
       "exposed" : false
     }
   },
