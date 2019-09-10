@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "UserCaseList",
   "name" : "UserCaseList",
-  "lastUpdate" : 1568127865889,
+  "lastUpdate" : 1568128345750,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -1021,7 +1021,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"case-property-label\">Start date</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:short}} \n</div>"
+                            "value" : "<div class=\"case-property-label\">Start date</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}} \n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -2538,7 +2538,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"case-property-label\">Start date</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:short}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">Start date</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
