@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "UserCaseList",
   "name" : "UserCaseList",
-  "lastUpdate" : 1568041775488,
+  "lastUpdate" : 1568107206881,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -669,7 +669,7 @@
                     },
                     "hidden" : {
                       "type" : "constant",
-                      "value" : false
+                      "value" : true
                     },
                     "disabled" : {
                       "type" : "constant",
@@ -741,6 +741,95 @@
                   "reference" : "96676f60-53af-4af0-a24c-14b7d82f024c",
                   "hasValidationError" : false,
                   "id" : "customRefreshButton"
+                } ], [ {
+                  "type" : "component",
+                  "dimension" : {
+                    "xs" : 12,
+                    "sm" : 12,
+                    "md" : 12,
+                    "lg" : 12
+                  },
+                  "propertyValues" : {
+                    "cssClasses" : {
+                      "type" : "constant",
+                      "value" : "panel-body"
+                    },
+                    "hidden" : {
+                      "type" : "constant",
+                      "value" : false
+                    },
+                    "disabled" : {
+                      "type" : "constant",
+                      "value" : false
+                    },
+                    "label" : {
+                      "type" : "interpolation",
+                      "value" : "<i class=\"glyphicon glyphicon-repeat\"></i>"
+                    },
+                    "alignment" : {
+                      "type" : "constant",
+                      "value" : "right"
+                    },
+                    "buttonStyle" : {
+                      "type" : "constant",
+                      "value" : "primary"
+                    },
+                    "action" : {
+                      "type" : "constant",
+                      "value" : "GET"
+                    },
+                    "assign" : {
+                      "type" : "constant",
+                      "value" : false
+                    },
+                    "url" : {
+                      "type" : "interpolation",
+                      "value" : "{{openCaseAPIURL}}"
+                    },
+                    "responseStatusCode" : {
+                      "type" : "variable",
+                      "value" : ""
+                    },
+                    "dataToSend" : {
+                      "type" : "constant"
+                    },
+                    "dataFromSuccess" : {
+                      "type" : "variable",
+                      "value" : "openCaseAPI"
+                    },
+                    "closeOnSuccess" : {
+                      "type" : "constant",
+                      "value" : false
+                    },
+                    "dataFromError" : {
+                      "type" : "variable",
+                      "value" : ""
+                    },
+                    "targetUrlOnSuccess" : {
+                      "type" : "interpolation"
+                    },
+                    "collectionToModify" : {
+                      "type" : "variable",
+                      "value" : ""
+                    },
+                    "modalId" : {
+                      "type" : "constant",
+                      "value" : ""
+                    },
+                    "collectionPosition" : {
+                      "type" : "constant",
+                      "value" : "Last"
+                    },
+                    "valueToAdd" : {
+                      "type" : "constant"
+                    },
+                    "removeItem" : {
+                      "type" : "variable"
+                    }
+                  },
+                  "reference" : "ae16bdc9-9ad7-4479-9df9-dfc72e032093",
+                  "hasValidationError" : false,
+                  "id" : "pbButton"
                 } ] ]
               } ], [ {
                 "type" : "container",
@@ -7345,40 +7434,10 @@
     }
   } ] ],
   "assets" : [ {
-    "id" : "0a10c773-c942-4592-9c62-a86da9701869",
-    "name" : "theme.png",
-    "type" : "img",
-    "order" : 9,
-    "external" : false
-  }, {
     "id" : "9c263032-7532-41a0-9c1b-65bf6bc78a49",
     "name" : "style.css",
     "type" : "css",
     "order" : 0,
-    "external" : false
-  }, {
-    "id" : "30a890d3-e296-4760-b8f9-fced06165eeb",
-    "name" : "api.png",
-    "type" : "img",
-    "order" : 10,
-    "external" : false
-  }, {
-    "id" : "d529acaa-5140-4f35-9d09-236d98c8dd10",
-    "name" : "delete-icon.png",
-    "type" : "img",
-    "order" : 11,
-    "external" : false
-  }, {
-    "id" : "b8224f92-694f-4242-bb1b-1c921ce3872e",
-    "name" : "moment-2.11.2.min.js",
-    "type" : "js",
-    "order" : 5,
-    "external" : false
-  }, {
-    "id" : "8ce8959f-a03e-453c-b3de-ea7c76eb22de",
-    "name" : "page.png",
-    "type" : "img",
-    "order" : 6,
     "external" : false
   }, {
     "id" : "3ff5fc60-b9ff-4d50-b644-72302ffa90cd",
@@ -7491,12 +7550,17 @@
     },
     "openCaseAPI" : {
       "type" : "url",
-      "value" : "../API/bpm/case?c=25&d=processDefinitionId&d=started_by&n=activeFlowNodes&n=failedFlowNodes",
+      "value" : "{{openCaseAPIURL}}",
       "exposed" : false
     },
     "archivedCaseAPI" : {
       "type" : "url",
       "value" : "../API/bpm/archivedCase?c=25&d=processDefinitionId&d=started_by&d=startedBySubstitute&f=user_id%3D4&o=sourceObjectId+DESC",
+      "exposed" : false
+    },
+    "openCaseAPIURL" : {
+      "type" : "constant",
+      "value" : "../API/bpm/case?c=25&d=processDefinitionId&d=started_by&n=activeFlowNodes&n=failedFlowNodes",
       "exposed" : false
     }
   },
