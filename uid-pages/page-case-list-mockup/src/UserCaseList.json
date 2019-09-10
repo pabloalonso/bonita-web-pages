@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "UserCaseList",
   "name" : "UserCaseList",
-  "lastUpdate" : 1568128345750,
+  "lastUpdate" : 1568131623448,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -280,7 +280,7 @@
                   "type" : "component",
                   "dimension" : {
                     "xs" : 12,
-                    "sm" : 3,
+                    "sm" : 12,
                     "md" : 3,
                     "lg" : 3
                   },
@@ -344,7 +344,7 @@
                   "type" : "component",
                   "dimension" : {
                     "xs" : 12,
-                    "sm" : 3,
+                    "sm" : 12,
                     "md" : 3,
                     "lg" : 3
                   },
@@ -408,7 +408,7 @@
                   "type" : "component",
                   "dimension" : {
                     "xs" : 12,
-                    "sm" : 3,
+                    "sm" : 12,
                     "md" : 3,
                     "lg" : 3
                   },
@@ -470,7 +470,7 @@
                   "type" : "component",
                   "dimension" : {
                     "xs" : 12,
-                    "sm" : 3,
+                    "sm" : 12,
                     "md" : 3,
                     "lg" : 3
                   },
@@ -962,8 +962,8 @@
                       "dimension" : {
                         "xs" : 3,
                         "sm" : 2,
-                        "md" : 2,
-                        "lg" : 2
+                        "md" : 3,
+                        "lg" : 3
                       },
                       "propertyValues" : {
                         "cssClasses" : {
@@ -1112,8 +1112,8 @@
                       "dimension" : {
                         "xs" : 2,
                         "sm" : 1,
-                        "md" : 2,
-                        "lg" : 2
+                        "md" : 1,
+                        "lg" : 1
                       },
                       "propertyValues" : {
                         "cssClasses" : {
@@ -1185,7 +1185,7 @@
                     } ], [ {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
+                        "xs" : 4,
                         "sm" : 2,
                         "md" : 2,
                         "lg" : 2
@@ -1260,9 +1260,9 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
-                        "sm" : 2,
-                        "md" : 2,
+                        "xs" : 4,
+                        "sm" : 3,
+                        "md" : 3,
                         "lg" : 3
                       },
                       "propertyValues" : {
@@ -1335,8 +1335,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
-                        "sm" : 2,
+                        "xs" : 4,
+                        "sm" : 3,
                         "md" : 2,
                         "lg" : 2
                       },
@@ -1410,7 +1410,7 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
+                        "xs" : 4,
                         "sm" : 2,
                         "md" : 2,
                         "lg" : 2
@@ -1485,7 +1485,7 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
+                        "xs" : 4,
                         "sm" : 2,
                         "md" : 2,
                         "lg" : 2
@@ -2177,9 +2177,9 @@
                     "rows" : [ [ {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
-                        "md" : 1,
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
                         "lg" : 2
                       },
                       "propertyValues" : {
@@ -2252,9 +2252,9 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
-                        "md" : 1,
+                        "xs" : 2,
+                        "sm" : 2,
+                        "md" : 2,
                         "lg" : 2
                       },
                       "propertyValues" : {
@@ -2327,8 +2327,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 3,
+                        "sm" : 3,
                         "md" : 2,
                         "lg" : 2
                       },
@@ -2402,8 +2402,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 2,
+                        "sm" : 1,
                         "md" : 2,
                         "lg" : 1
                       },
@@ -2477,8 +2477,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 3,
+                        "sm" : 2,
                         "md" : 2,
                         "lg" : 3
                       },
@@ -2552,15 +2552,15 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 2,
+                        "sm" : 2,
                         "md" : 2,
                         "lg" : 2
                       },
                       "propertyValues" : {
                         "cssClasses" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : "hidden-xs"
                         },
                         "hidden" : {
                           "type" : "constant",
@@ -2627,8 +2627,8 @@
                     } ], [ {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 4,
+                        "sm" : 2,
                         "md" : 2,
                         "lg" : 2
                       },
@@ -2702,8 +2702,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 4,
+                        "sm" : 2,
                         "md" : 2,
                         "lg" : 2
                       },
@@ -2777,8 +2777,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 4,
+                        "sm" : 3,
                         "md" : 2,
                         "lg" : 2
                       },
@@ -2852,8 +2852,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 4,
+                        "sm" : 2,
                         "md" : 3,
                         "lg" : 2
                       },
@@ -2927,8 +2927,8 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
+                        "xs" : 4,
+                        "sm" : 2,
                         "md" : 3,
                         "lg" : 2
                       },
