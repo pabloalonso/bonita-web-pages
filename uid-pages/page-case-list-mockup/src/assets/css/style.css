@@ -71,15 +71,6 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.controButtons{
-    margin-left: -25px;
-}
-
-.padding-x-1{
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
 .scrollInBody{
     overflow-y: auto;
     height: 80vh;
@@ -92,8 +83,4 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 
 .case-property-text{
     font-size: 12px;
-}
-
-.margin-top-1{
-    margin-top: 1em;
 }
