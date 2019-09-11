@@ -7,7 +7,3 @@ UIDPage {
         }
     }
 }
-
-dependencies {
-    page project(':widgets:customRefreshButton')
-}
