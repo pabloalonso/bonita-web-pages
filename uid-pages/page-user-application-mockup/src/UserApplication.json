@@ -2,7 +2,7 @@
   "designerVersion" : "1.10.6",
   "id" : "userApplication",
   "name" : "userApplication",
-  "lastUpdate" : 1568378648805,
+  "lastUpdate" : 1568383100589,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -6436,11 +6436,19 @@
                         "type" : "constant",
                         "value" : false
                       },
-                      "disabled" : {
+                      "required" : {
                         "type" : "constant",
                         "value" : false
                       },
-                      "required" : {
+                      "minLength" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "maxLength" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "readOnly" : {
                         "type" : "constant",
                         "value" : false
                       },
@@ -6464,26 +6472,28 @@
                         "type" : "interpolation",
                         "value" : "Select a value"
                       },
-                      "availableValues" : {
-                        "type" : "expression",
-                        "value" : "family"
-                      },
-                      "displayedKey" : {
-                        "type" : "constant",
-                        "value" : "key"
-                      },
-                      "returnedKey" : {
-                        "type" : "constant",
-                        "value" : ""
-                      },
                       "value" : {
                         "type" : "variable",
                         "value" : ""
+                      },
+                      "type" : {
+                        "type" : "constant",
+                        "value" : "text"
+                      },
+                      "min" : {
+                        "type" : "constant"
+                      },
+                      "max" : {
+                        "type" : "constant"
+                      },
+                      "step" : {
+                        "type" : "constant",
+                        "value" : 1
                       }
                     },
-                    "reference" : "8cdff6c8-2866-4ee6-8cf6-1217a917ed8b",
+                    "reference" : "e550687d-94bb-4405-ae10-2bd38f078e96",
                     "hasValidationError" : false,
-                    "id" : "pbSelect"
+                    "id" : "pbInput"
                   } ], [ {
                     "type" : "component",
                     "dimension" : {
