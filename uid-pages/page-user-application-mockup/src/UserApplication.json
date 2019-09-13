@@ -2,7 +2,7 @@
   "designerVersion" : "1.10.6",
   "id" : "userApplication",
   "name" : "userApplication",
-  "lastUpdate" : 1568361413721,
+  "lastUpdate" : 1568364664923,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -5918,7 +5918,7 @@
                     "xs" : 12,
                     "sm" : 12,
                     "md" : 3,
-                    "lg" : 4
+                    "lg" : 3
                   },
                   "propertyValues" : {
                     "cssClasses" : {
@@ -6062,7 +6062,7 @@
                     "xs" : 12,
                     "sm" : 12,
                     "md" : 9,
-                    "lg" : 8
+                    "lg" : 9
                   },
                   "propertyValues" : {
                     "cssClasses" : {
@@ -6297,7 +6297,7 @@
                       "xs" : 12,
                       "sm" : 3,
                       "md" : 3,
-                      "lg" : 4
+                      "lg" : 3
                     },
                     "propertyValues" : {
                       "cssClasses" : {
@@ -6425,7 +6425,7 @@
                       "xs" : 12,
                       "sm" : 4,
                       "md" : 4,
-                      "lg" : 3
+                      "lg" : 4
                     },
                     "propertyValues" : {
                       "cssClasses" : {
@@ -6683,7 +6683,7 @@
                   "propertyValues" : {
                     "cssClasses" : {
                       "type" : "constant",
-                      "value" : ""
+                      "value" : "panel-body"
                     },
                     "hidden" : {
                       "type" : "constant",
@@ -6700,15 +6700,139 @@
                   "rows" : [ [ {
                     "type" : "component",
                     "dimension" : {
-                      "xs" : 12,
-                      "sm" : 12,
-                      "md" : 12,
+                      "xs" : 1,
+                      "sm" : 2,
+                      "md" : 1,
+                      "lg" : 1
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "hidden-xs"
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "<i class=\"glyphicon glyphicon-search\"></i> <strong>Find</strong>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "success"
+                      },
+                      "action" : {
+                        "type" : "constant",
+                        "value" : "Submit task"
+                      },
+                      "assign" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "url" : {
+                        "type" : "interpolation"
+                      },
+                      "responseStatusCode" : {
+                        "type" : "variable",
+                        "value" : ""
+                      },
+                      "dataToSend" : {
+                        "type" : "constant"
+                      },
+                      "dataFromSuccess" : {
+                        "type" : "variable",
+                        "value" : ""
+                      },
+                      "closeOnSuccess" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "dataFromError" : {
+                        "type" : "variable",
+                        "value" : ""
+                      },
+                      "targetUrlOnSuccess" : {
+                        "type" : "interpolation"
+                      },
+                      "collectionToModify" : {
+                        "type" : "variable"
+                      },
+                      "modalId" : {
+                        "type" : "constant",
+                        "value" : ""
+                      },
+                      "collectionPosition" : {
+                        "type" : "constant",
+                        "value" : "Last"
+                      },
+                      "valueToAdd" : {
+                        "type" : "constant"
+                      },
+                      "removeItem" : {
+                        "type" : "variable"
+                      }
+                    },
+                    "reference" : "a4b09cd0-5512-41b4-ac17-0c35b7a483e7",
+                    "hasValidationError" : false,
+                    "id" : "pbButton"
+                  }, {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 1,
+                      "sm" : 1,
+                      "md" : 1,
+                      "lg" : 1
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "hidden-xs"
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "<i class=\"glyphicon glyphicon-ban-circle\"></i> <strong>Clear filter</strong>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "right"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "danger"
+                      }
+                    },
+                    "reference" : "64a411a9-0419-4770-bb48-c2cb71b10a85",
+                    "hasValidationError" : false,
+                    "id" : "customResetButton"
+                  } ], [ {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6,
+                      "sm" : 6,
+                      "md" : 6,
                       "lg" : 6
                     },
                     "propertyValues" : {
                       "cssClasses" : {
                         "type" : "constant",
-                        "value" : ""
+                        "value" : "visible-xs"
                       },
                       "hidden" : {
                         "type" : "constant",
@@ -6781,9 +6905,46 @@
                         "type" : "variable"
                       }
                     },
-                    "reference" : "a4b09cd0-5512-41b4-ac17-0c35b7a483e7",
+                    "reference" : "bcef1d6b-6d0d-4f21-9776-262771c3f659",
                     "hasValidationError" : false,
                     "id" : "pbButton"
+                  }, {
+                    "type" : "component",
+                    "dimension" : {
+                      "xs" : 6,
+                      "sm" : 6,
+                      "md" : 6,
+                      "lg" : 6
+                    },
+                    "propertyValues" : {
+                      "cssClasses" : {
+                        "type" : "constant",
+                        "value" : "visible-xs"
+                      },
+                      "hidden" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "disabled" : {
+                        "type" : "constant",
+                        "value" : false
+                      },
+                      "label" : {
+                        "type" : "interpolation",
+                        "value" : "<i class=\"glyphicon glyphicon-ban-circle\"></i> <strong>Clear filter</strong>"
+                      },
+                      "alignment" : {
+                        "type" : "constant",
+                        "value" : "left"
+                      },
+                      "buttonStyle" : {
+                        "type" : "constant",
+                        "value" : "danger"
+                      }
+                    },
+                    "reference" : "a50b6110-fc62-4c68-8d7d-4bfb4925c453",
+                    "hasValidationError" : false,
+                    "id" : "customResetButton"
                   } ] ]
                 } ] ]
               }
@@ -7008,7 +7169,7 @@
                             "dimension" : {
                               "xs" : 2,
                               "sm" : 1,
-                              "md" : 1,
+                              "md" : 2,
                               "lg" : 2
                             },
                             "propertyValues" : {
@@ -7083,7 +7244,7 @@
                             "dimension" : {
                               "xs" : 2,
                               "sm" : 3,
-                              "md" : 2,
+                              "md" : 3,
                               "lg" : 3
                             },
                             "propertyValues" : {
@@ -7158,7 +7319,7 @@
                             "dimension" : {
                               "xs" : 2,
                               "sm" : 1,
-                              "md" : 2,
+                              "md" : 1,
                               "lg" : 1
                             },
                             "propertyValues" : {
@@ -7383,7 +7544,7 @@
                             "dimension" : {
                               "xs" : 1,
                               "sm" : 1,
-                              "md" : 2,
+                              "md" : 1,
                               "lg" : 1
                             },
                             "propertyValues" : {
@@ -7571,7 +7732,7 @@
                             "dimension" : {
                               "xs" : 3,
                               "sm" : 2,
-                              "md" : 3,
+                              "md" : 2,
                               "lg" : 2
                             },
                             "propertyValues" : {
@@ -7646,7 +7807,7 @@
                             "dimension" : {
                               "xs" : 3,
                               "sm" : 2,
-                              "md" : 2,
+                              "md" : 3,
                               "lg" : 3
                             },
                             "propertyValues" : {
