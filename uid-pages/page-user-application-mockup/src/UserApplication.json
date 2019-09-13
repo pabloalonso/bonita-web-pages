@@ -2,7 +2,7 @@
   "designerVersion" : "1.10.6",
   "id" : "userApplication",
   "name" : "userApplication",
-  "lastUpdate" : 1568215124736,
+  "lastUpdate" : 1568361413721,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -6703,7 +6703,7 @@
                       "xs" : 12,
                       "sm" : 12,
                       "md" : 12,
-                      "lg" : 12
+                      "lg" : 6
                     },
                     "propertyValues" : {
                       "cssClasses" : {

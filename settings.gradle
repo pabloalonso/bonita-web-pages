@@ -20,5 +20,6 @@ include 'widgets:customLivingApplicationMenu'
 include 'widgets:customLivingApplicationIFrame'
 include 'widgets:customBonitaLayoutMenu'
 include 'widgets:timelineWidget'
+include 'widgets:customResetButton'
 
 rootProject.name = 'bonita-web-pages'
