@@ -130,3 +130,12 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
 .clearButton button{
     margin-left: -3em;
 }
+
+.case-property-label{
+    font-size: 0.8em;
+    opacity:0.6;
+}
+
+.case-property-text{
+    font-size: 12px;
+}

@@ -2,7 +2,7 @@
   "designerVersion" : "1.10.6",
   "id" : "userApplication",
   "name" : "userApplication",
-  "lastUpdate" : 1568367485536,
+  "lastUpdate" : 1568378648805,
   "rows" : [ [ {
     "type" : "container",
     "dimension" : {
@@ -1323,7 +1323,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Task name</div>\n<div class=\"font-size-12\">\n{{$item.displayName}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">\nTask name\n</div>\n<div class=\"case-property-text\">\n{{$item.displayName}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -1398,7 +1398,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Process</div>\n<div class=\"font-size-12\">\n<a href=\"#\" title=\"Process details\">{{$item.rootContainerId.displayName}}\n</a>\n</div>"
+                            "value" : "<div class=\"case-property-label\">\nProcess\n</div>\n<div class=\"case-property-text\">\n<a href=\"#\" title=\"Process details\">{{$item.rootContainerId.displayName}}\n</a>\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -1473,7 +1473,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Case ID</div>\n<div class=\"font-size-12\">\n<a href=\"#\" title=\"Case Details\">\n{{$item.caseId}}\n</a>\n</div>"
+                            "value" : "<div class=\"case-property-label\">\nCase ID\n</div>\n<div class=\"case-property-label\">\n<a href=\"#\" title=\"Case Details\">\n{{$item.caseId}}\n</a>\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -1487,7 +1487,7 @@
                     }, {
                       "type" : "container",
                       "dimension" : {
-                        "xs" : 2,
+                        "xs" : 3,
                         "sm" : 2,
                         "md" : 2,
                         "lg" : 2
@@ -1548,7 +1548,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Available since</div>\n<div class=\"font-size-12\">\n{{$item.assigned_date.replace(\" \", \"T\") | uiDate: 'short'}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">\nAvailable since\n</div>\n<div class=\"case-property-text\">\n{{$item.assigned_date.replace(\" \", \"T\") | uiDate: 'short'}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -1623,7 +1623,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Due date</div>\n<div class=\"font-size-12\">\n{{$item.dueDate.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">\nDue date\n</div>\n<div class=\"case-property-text\">\n{{$item.dueDate.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -1698,7 +1698,7 @@
                           },
                           "text" : {
                             "type" : "interpolation",
-                            "value" : "<div class=\"label\">Priority</div>\n<div class=\"font-size-12\">\n{{$item.priority}}\n</div>"
+                            "value" : "<div class=\"case-property-label\">Priority</div>\n<div class=\"case-property-text\">\n{{$item.priority}}\n</div>"
                           },
                           "alignment" : {
                             "type" : "constant",
@@ -7228,7 +7228,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Case ID</div>\n<div class=\"font-size-12\">\n{{$item.id}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Case ID</div>\n<div class=\"case-property-text\">\n{{$item.id}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7303,7 +7303,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Process</div>\n<div class=\"font-size-12\">\n<a href=\"#\" title=\"Process details\">\n{{$item.processDefinitionId.displayName}}\n</a>\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Process</div>\n<div class=\"case-property-text\">\n<a href=\"#\" title=\"Process details\">\n{{$item.processDefinitionId.displayName}}\n</a>\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7378,7 +7378,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Version</div>\n<div class=\"font-size-12\">\n{{$item.processDefinitionId.version}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Version</div>\n<div class=\"case-property-text\">\n{{$item.processDefinitionId.version}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7453,7 +7453,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Started on</div>\n<div class=\"font-size-12\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Started on</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7528,7 +7528,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Started by</div>\n<div class=\"font-size-12\">\n{{$item.started_by.firstname}}\n{{$item.started_by.lastname}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Started by</div>\n<div class=\"case-property-text\">\n{{$item.started_by.firstname}}\n{{$item.started_by.lastname}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7603,7 +7603,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Tasks</div>\n<div class=\"font-size-12\">\n<a href=\"#\" title=\"Tasks to do\">\n{{$item.activeFlowNodes}}\n</a>\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Tasks</div>\n<div class=\"case-property-text\">\n<a href=\"#\" title=\"Tasks to do\">\n{{$item.activeFlowNodes}}\n</a>\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7791,7 +7791,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\n{{$item.searchIndex1Label}}\n</div>\n<div class=\"font-size-12\">\n{{$item.searchIndex1Value}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\n{{$item.searchIndex1Label}}\n</div>\n<div class=\"case-property-text\">\n{{$item.searchIndex1Value}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7866,7 +7866,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\n{{$item.searchIndex2Label}}\n</div>\n<div class=\"font-size-12\">\n{{$item.searchIndex2Value}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\n{{$item.searchIndex2Label}}\n</div>\n<div class=\"case-property-text\">\n{{$item.searchIndex2Value}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -7941,7 +7941,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\n{{$item.searchIndex3Label}}\n</div>\n<div class=\"font-size-12\">\n{{$item.searchIndex3Value}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\n{{$item.searchIndex3Label}}\n</div>\n<div class=\"case-property-text\">\n{{$item.searchIndex3Value}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -8016,7 +8016,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\n{{$item.searchIndex4Label}}\n</div>\n<div class=\"font-size-12\">\n{{$item.searchIndex4Value}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\n{{$item.searchIndex4Label}}\n</div>\n<div class=\"case-property-text\">\n{{$item.searchIndex4Value}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -8091,7 +8091,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\n{{$item.searchIndex5Label}}\n</div>\n<div class=\"font-size-12\">\n{{$item.searchIndex5Value}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\n{{$item.searchIndex5Label}}\n</div>\n<div class=\"case-property-text\">\n{{$item.searchIndex5Value}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -12097,7 +12097,7 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">Archived Case ID</div>\n<div class=\"font-size-12\">\n{{$item.id}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">Archived Case ID</div>\n<div class=\"case-property-text\">\n{{$item.id}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
@@ -12112,6 +12112,81 @@
                             "type" : "container",
                             "dimension" : {
                               "xs" : 2,
+                              "sm" : 2,
+                              "md" : 1,
+                              "lg" : 2
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : ""
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "repeatedCollection" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "60c03eff-2fbe-4c4e-959b-4181a56cfc2d",
+                            "hasValidationError" : false,
+                            "id" : "pbContainer",
+                            "rows" : [ [ {
+                              "type" : "component",
+                              "dimension" : {
+                                "xs" : 12,
+                                "sm" : 12,
+                                "md" : 12,
+                                "lg" : 12
+                              },
+                              "propertyValues" : {
+                                "cssClasses" : {
+                                  "type" : "constant",
+                                  "value" : ""
+                                },
+                                "hidden" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "labelHidden" : {
+                                  "type" : "constant",
+                                  "value" : true
+                                },
+                                "label" : {
+                                  "type" : "interpolation",
+                                  "value" : "Default label"
+                                },
+                                "labelPosition" : {
+                                  "type" : "constant",
+                                  "value" : "top"
+                                },
+                                "labelWidth" : {
+                                  "type" : "constant",
+                                  "value" : 4
+                                },
+                                "allowHTML" : {
+                                  "type" : "constant",
+                                  "value" : true
+                                },
+                                "text" : {
+                                  "type" : "interpolation",
+                                  "value" : "<div class=\"case-property-label\">\nOpen Case ID\n</div>\n<div class=\"case-property-text\">\n{{$item.rootCaseId}}\n</div>"
+                                },
+                                "alignment" : {
+                                  "type" : "constant",
+                                  "value" : "left"
+                                }
+                              },
+                              "reference" : "c8b2d4f5-5cce-4f23-ad3e-ad953e299040",
+                              "hasValidationError" : false,
+                              "id" : "pbText"
+                            } ] ]
+                          }, {
+                            "type" : "container",
+                            "dimension" : {
+                              "xs" : 3,
                               "sm" : 2,
                               "md" : 2,
                               "lg" : 2
@@ -12130,7 +12205,7 @@
                                 "value" : ""
                               }
                             },
-                            "reference" : "b166f518-4c06-4443-926d-f355a6ad3681",
+                            "reference" : "8a92d33e-b677-4c00-944f-3d4ff22bfa24",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12172,89 +12247,14 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\nOpen Case ID\n</div>\n<div class=\"font-size-12\">\n{{$item.rootCaseId}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\nProcess name\n</div>\n<div class=\"case-property-text\">\n{{$item.processDefinitionId.displayName}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "17b5903a-c259-4ebb-a595-07029328b012",
-                              "hasValidationError" : false,
-                              "id" : "pbText"
-                            } ] ]
-                          }, {
-                            "type" : "container",
-                            "dimension" : {
-                              "xs" : 2,
-                              "sm" : 3,
-                              "md" : 3,
-                              "lg" : 3
-                            },
-                            "propertyValues" : {
-                              "cssClasses" : {
-                                "type" : "constant",
-                                "value" : ""
-                              },
-                              "hidden" : {
-                                "type" : "constant",
-                                "value" : false
-                              },
-                              "repeatedCollection" : {
-                                "type" : "variable",
-                                "value" : ""
-                              }
-                            },
-                            "reference" : "b4b6edc2-d60c-42d6-ac21-b72ee6f77324",
-                            "hasValidationError" : false,
-                            "id" : "pbContainer",
-                            "rows" : [ [ {
-                              "type" : "component",
-                              "dimension" : {
-                                "xs" : 12,
-                                "sm" : 12,
-                                "md" : 12,
-                                "lg" : 12
-                              },
-                              "propertyValues" : {
-                                "cssClasses" : {
-                                  "type" : "constant",
-                                  "value" : ""
-                                },
-                                "hidden" : {
-                                  "type" : "constant",
-                                  "value" : false
-                                },
-                                "labelHidden" : {
-                                  "type" : "constant",
-                                  "value" : true
-                                },
-                                "label" : {
-                                  "type" : "interpolation",
-                                  "value" : "Default label"
-                                },
-                                "labelPosition" : {
-                                  "type" : "constant",
-                                  "value" : "top"
-                                },
-                                "labelWidth" : {
-                                  "type" : "constant",
-                                  "value" : 4
-                                },
-                                "allowHTML" : {
-                                  "type" : "constant",
-                                  "value" : true
-                                },
-                                "text" : {
-                                  "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\nProcess name\n</div>\n<div class=\"font-size-12\">\n{{$item.processDefinitionId.displayName}}\n</div>"
-                                },
-                                "alignment" : {
-                                  "type" : "constant",
-                                  "value" : "left"
-                                }
-                              },
-                              "reference" : "67df6d36-91e4-4a27-9fb3-6731da020de1",
+                              "reference" : "bf37ffe0-215b-41cb-9e53-b6a538a0dc39",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
@@ -12263,7 +12263,7 @@
                             "dimension" : {
                               "xs" : 2,
                               "sm" : 1,
-                              "md" : 1,
+                              "md" : 2,
                               "lg" : 1
                             },
                             "propertyValues" : {
@@ -12280,7 +12280,7 @@
                                 "value" : ""
                               }
                             },
-                            "reference" : "4c9c0e4f-0dba-4cc0-8567-0c38a5b2dcf5",
+                            "reference" : "951d9c79-0661-47d4-b1c6-065fd04b1b7d",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12322,21 +12322,21 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\nVersion\n</div>\n<div class=\"font-size-12\">\n{{$item.processDefinitionId.version}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\nVersion\n</div>\n<div class=\"case-property-text\">\n{{$item.processDefinitionId.version}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "0afdf1f0-1665-4772-b572-f1e6d2271fbf",
+                              "reference" : "befa7582-6ec9-4df5-a1c1-1558e7ad471e",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
                           }, {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 2,
+                              "xs" : 3,
                               "sm" : 2,
                               "md" : 2,
                               "lg" : 2
@@ -12355,7 +12355,7 @@
                                 "value" : ""
                               }
                             },
-                            "reference" : "f37a3253-f881-44a3-aee5-a28e67fc99d1",
+                            "reference" : "a2365710-f674-41ea-a4a9-107221ba4f19",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12397,14 +12397,14 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\nStart date\n</div>\n<div class=\"font-size-12\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\nStart date\n</div>\n<div class=\"case-property-text\">\n{{$item.start.replace(\" \", \"T\")|uiDate:'short'}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "9b570eb6-d5cb-458d-844b-704007299425",
+                              "reference" : "3e75faf0-3b61-4884-8fc3-b7df21e5f1be",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
@@ -12419,7 +12419,7 @@
                             "propertyValues" : {
                               "cssClasses" : {
                                 "type" : "constant",
-                                "value" : ""
+                                "value" : "hidden-xs"
                               },
                               "hidden" : {
                                 "type" : "constant",
@@ -12430,7 +12430,7 @@
                                 "value" : ""
                               }
                             },
-                            "reference" : "03401fad-47c0-45df-a6ac-07dac774a902",
+                            "reference" : "fdb3b6e1-8e5b-4a12-924b-4c0fc287d398",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12472,24 +12472,137 @@
                                 },
                                 "text" : {
                                   "type" : "interpolation",
-                                  "value" : "<div class=\"label\">\nStarted by\n</div>\n<div class=\"font-size-12\">\n{{$item.started_by.firstname}}\n{{$item.started_by.lastname}}\n</div>"
+                                  "value" : "<div class=\"case-property-label\">\nStarted by\n</div>\n<div class=\"case-property-text\">\n{{$item.started_by.firstname}}\n{{$item.started_by.lastname}}\n</div>"
                                 },
                                 "alignment" : {
                                   "type" : "constant",
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "07ff8fea-1769-4849-abe2-5813d2211326",
+                              "reference" : "ee597cc8-16c8-4800-b64b-748d5a8f6525",
                               "hasValidationError" : false,
                               "id" : "pbText"
+                            } ] ]
+                          }, {
+                            "type" : "container",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 1,
+                              "md" : 1,
+                              "lg" : 1
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : "hidden-xs"
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "repeatedCollection" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "57ce350c-bf18-4e7f-9c1c-58f4d4737c46",
+                            "hasValidationError" : false,
+                            "id" : "pbContainer",
+                            "rows" : [ [ {
+                              "type" : "component",
+                              "dimension" : {
+                                "xs" : 12,
+                                "sm" : 12,
+                                "md" : 12,
+                                "lg" : 12
+                              },
+                              "propertyValues" : {
+                                "cssClasses" : {
+                                  "type" : "constant",
+                                  "value" : ""
+                                },
+                                "hidden" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "disabled" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "label" : {
+                                  "type" : "interpolation",
+                                  "value" : "<i class=\"glyphicon glyphicon-list font-size-12\" title=\"Case details\"></i>"
+                                },
+                                "alignment" : {
+                                  "type" : "constant",
+                                  "value" : "right"
+                                },
+                                "buttonStyle" : {
+                                  "type" : "constant",
+                                  "value" : "link"
+                                },
+                                "action" : {
+                                  "type" : "constant",
+                                  "value" : "Submit task"
+                                },
+                                "assign" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "url" : {
+                                  "type" : "interpolation"
+                                },
+                                "responseStatusCode" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "dataToSend" : {
+                                  "type" : "constant"
+                                },
+                                "dataFromSuccess" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "closeOnSuccess" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "dataFromError" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "targetUrlOnSuccess" : {
+                                  "type" : "interpolation"
+                                },
+                                "collectionToModify" : {
+                                  "type" : "variable"
+                                },
+                                "modalId" : {
+                                  "type" : "constant",
+                                  "value" : ""
+                                },
+                                "collectionPosition" : {
+                                  "type" : "constant",
+                                  "value" : "Last"
+                                },
+                                "valueToAdd" : {
+                                  "type" : "constant"
+                                },
+                                "removeItem" : {
+                                  "type" : "variable"
+                                }
+                              },
+                              "reference" : "13471191-f97a-4b6a-956b-a131b9d137a1",
+                              "hasValidationError" : false,
+                              "id" : "pbButton"
                             } ] ]
                           } ], [ {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "xs" : 4,
+                              "sm" : 2,
+                              "md" : 2,
+                              "lg" : 2
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -12498,14 +12611,14 @@
                               },
                               "hidden" : {
                                 "type" : "expression",
-                                "value" : ""
+                                "value" : "$item.searchIndex1Value == \"\""
                               },
                               "repeatedCollection" : {
                                 "type" : "variable",
                                 "value" : ""
                               }
                             },
-                            "reference" : "7d441ae8-d6f6-498f-9a71-9dc1ab925359",
+                            "reference" : "5cca4560-60cc-4c37-b942-1f76dc8381a9",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12554,17 +12667,17 @@
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "c116b6c7-a92b-4c11-9e41-fc513b5b377b",
+                              "reference" : "56d13119-80f5-4cce-b784-1638db411944",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
                           }, {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "xs" : 4,
+                              "sm" : 2,
+                              "md" : 2,
+                              "lg" : 2
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -12573,14 +12686,14 @@
                               },
                               "hidden" : {
                                 "type" : "expression",
-                                "value" : ""
+                                "value" : "$item.searchIndex2Value == \"\""
                               },
                               "repeatedCollection" : {
                                 "type" : "variable",
                                 "value" : ""
                               }
                             },
-                            "reference" : "133ded0e-1f4e-4586-baf7-bafe77d26b3c",
+                            "reference" : "c6fef445-e585-4760-aa69-cb8d80a164da",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12629,17 +12742,17 @@
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "01755715-d584-45a6-ad5d-df62d7585b4b",
+                              "reference" : "ad7e11ef-c2c6-4283-9393-5229e5229153",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
                           }, {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "xs" : 4,
+                              "sm" : 3,
+                              "md" : 3,
+                              "lg" : 3
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -12647,15 +12760,15 @@
                                 "value" : ""
                               },
                               "hidden" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "$item.searchIndex3Value == \"\""
                               },
                               "repeatedCollection" : {
                                 "type" : "variable",
                                 "value" : ""
                               }
                             },
-                            "reference" : "c5fd6a0a-7569-4520-a81d-8928c0f6746c",
+                            "reference" : "310cfa65-ccdd-4d60-bcfd-25196724b26e",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12704,17 +12817,17 @@
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "7c8fa92b-96cd-49b5-86b7-98c163594c95",
+                              "reference" : "a55a3880-be71-4737-994a-187685240065",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
                           }, {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "xs" : 4,
+                              "sm" : 3,
+                              "md" : 3,
+                              "lg" : 3
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -12722,15 +12835,15 @@
                                 "value" : ""
                               },
                               "hidden" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "$item.searchIndex4Value == \"\""
                               },
                               "repeatedCollection" : {
                                 "type" : "variable",
                                 "value" : ""
                               }
                             },
-                            "reference" : "96f2480c-097e-41ca-9984-d03c19900ccc",
+                            "reference" : "6e751aef-2a94-4146-b5df-7a06836d6ddc",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12779,17 +12892,17 @@
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "34b8f674-7f57-4ba1-bfe5-8e0437314988",
+                              "reference" : "3cf9ee67-8ac8-4287-a8ae-c4d4e9573390",
                               "hasValidationError" : false,
                               "id" : "pbText"
                             } ] ]
                           }, {
                             "type" : "container",
                             "dimension" : {
-                              "xs" : 12,
-                              "sm" : 12,
-                              "md" : 12,
-                              "lg" : 12
+                              "xs" : 4,
+                              "sm" : 2,
+                              "md" : 2,
+                              "lg" : 2
                             },
                             "propertyValues" : {
                               "cssClasses" : {
@@ -12797,15 +12910,15 @@
                                 "value" : ""
                               },
                               "hidden" : {
-                                "type" : "constant",
-                                "value" : false
+                                "type" : "expression",
+                                "value" : "$item.searchIndex5Value == \"\""
                               },
                               "repeatedCollection" : {
                                 "type" : "variable",
                                 "value" : ""
                               }
                             },
-                            "reference" : "e2670a4d-1ea2-4934-a844-671d06d3dbfd",
+                            "reference" : "a69847c7-fd0b-4966-858a-8ec61530f14a",
                             "hasValidationError" : false,
                             "id" : "pbContainer",
                             "rows" : [ [ {
@@ -12854,9 +12967,122 @@
                                   "value" : "left"
                                 }
                               },
-                              "reference" : "854a102e-6b83-421b-9b7b-2c9c99ddc8f1",
+                              "reference" : "c06092cc-e361-4d30-80ad-5de6e5f30ccb",
                               "hasValidationError" : false,
                               "id" : "pbText"
+                            } ] ]
+                          } ], [ {
+                            "type" : "container",
+                            "dimension" : {
+                              "xs" : 12,
+                              "sm" : 12,
+                              "md" : 12,
+                              "lg" : 12
+                            },
+                            "propertyValues" : {
+                              "cssClasses" : {
+                                "type" : "constant",
+                                "value" : "visible-xs no-padding"
+                              },
+                              "hidden" : {
+                                "type" : "constant",
+                                "value" : false
+                              },
+                              "repeatedCollection" : {
+                                "type" : "variable",
+                                "value" : ""
+                              }
+                            },
+                            "reference" : "49363c61-0bfc-49e9-bb98-223835b8905c",
+                            "hasValidationError" : false,
+                            "id" : "pbContainer",
+                            "rows" : [ [ {
+                              "type" : "component",
+                              "dimension" : {
+                                "xs" : 12,
+                                "sm" : 12,
+                                "md" : 12,
+                                "lg" : 12
+                              },
+                              "propertyValues" : {
+                                "cssClasses" : {
+                                  "type" : "constant",
+                                  "value" : ""
+                                },
+                                "hidden" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "disabled" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "label" : {
+                                  "type" : "interpolation",
+                                  "value" : "<i class=\"glyphicon glyphicon-list font-size-12\" title=\"Case details\"></i>"
+                                },
+                                "alignment" : {
+                                  "type" : "constant",
+                                  "value" : "right"
+                                },
+                                "buttonStyle" : {
+                                  "type" : "constant",
+                                  "value" : "link"
+                                },
+                                "action" : {
+                                  "type" : "constant",
+                                  "value" : "Submit task"
+                                },
+                                "assign" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "url" : {
+                                  "type" : "interpolation"
+                                },
+                                "responseStatusCode" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "dataToSend" : {
+                                  "type" : "constant"
+                                },
+                                "dataFromSuccess" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "closeOnSuccess" : {
+                                  "type" : "constant",
+                                  "value" : false
+                                },
+                                "dataFromError" : {
+                                  "type" : "variable",
+                                  "value" : ""
+                                },
+                                "targetUrlOnSuccess" : {
+                                  "type" : "interpolation"
+                                },
+                                "collectionToModify" : {
+                                  "type" : "variable"
+                                },
+                                "modalId" : {
+                                  "type" : "constant",
+                                  "value" : ""
+                                },
+                                "collectionPosition" : {
+                                  "type" : "constant",
+                                  "value" : "Last"
+                                },
+                                "valueToAdd" : {
+                                  "type" : "constant"
+                                },
+                                "removeItem" : {
+                                  "type" : "variable"
+                                }
+                              },
+                              "reference" : "34cf1f39-6491-4732-aaef-c7441f727efb",
+                              "hasValidationError" : false,
+                              "id" : "pbButton"
                             } ] ]
                           } ] ]
                         } ] ]
