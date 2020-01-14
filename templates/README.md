@@ -24,7 +24,7 @@ If you already have a designed page, you can copy and paste the entire content i
 
 - Change the names and contents of the spec files in the `test/specs/` folder. 
 This file will be used to define that tests will take.
-- Change the name of `step_definitions/%templatePageId%.js`. 
+- Change the name of `step_definitions/admin-task-list.js`. 
 This file will be used for defining the execution of each step. 
 Optional :
 - Add files with responses for mocked API calls in the `test/mockServer/` folder. 
