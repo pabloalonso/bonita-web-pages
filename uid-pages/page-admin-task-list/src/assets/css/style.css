@@ -131,3 +131,12 @@ input[type='number'].ng-invalid.ng-dirty, input[type='password'].ng-invalid.ng-d
     padding-left: 10px;
     padding-right: 0;
 }
+
+.glyphicon-remove,
+.glyphicon-ok{
+    font-size: 10px;
+}
+
+ul.dropdown-menu{
+    z-index: 9999;
+}
