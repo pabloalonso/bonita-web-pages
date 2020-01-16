@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "AdminTaskListBonitaV1",
   "name" : "AdminTaskListBonitaV1",
-  "lastUpdate" : 1579106182957,
+  "lastUpdate" : 1579169606840,
   "rows" : [
     [
       {
@@ -265,7 +265,7 @@
                                 "type" : "component",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
+                                  "sm" : 4,
                                   "md" : 4,
                                   "lg" : 4
                                 },
@@ -331,7 +331,7 @@
                                 "type" : "component",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
+                                  "sm" : 4,
                                   "md" : 4,
                                   "lg" : 4
                                 },
@@ -439,7 +439,7 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
+                                  "sm" : 1,
                                   "md" : 1,
                                   "lg" : 1
                                 },
@@ -571,8 +571,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 2,
+                                  "sm" : 3,
+                                  "md" : 3,
                                   "lg" : 3
                                 },
                                 "propertyValues" : {
@@ -703,8 +703,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 2,
+                                  "sm" : 3,
+                                  "md" : 3,
                                   "lg" : 3
                                 },
                                 "propertyValues" : {
@@ -832,8 +832,8 @@
                               {
                                 "type" : "container",
                                 "dimension" : {
-                                  "xs" : 12,
-                                  "sm" : 12,
+                                  "xs" : 6,
+                                  "sm" : 2,
                                   "md" : 2,
                                   "lg" : 2
                                 },
@@ -964,8 +964,8 @@
                               {
                                 "type" : "container",
                                 "dimension" : {
-                                  "xs" : 12,
-                                  "sm" : 12,
+                                  "xs" : 6,
+                                  "sm" : 2,
                                   "md" : 2,
                                   "lg" : 2
                                 },
@@ -1097,7 +1097,7 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
+                                  "sm" : 1,
                                   "md" : 1,
                                   "lg" : 1
                                 },
@@ -1437,8 +1437,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 2,
+                                  "sm" : 1,
+                                  "md" : 1,
                                   "lg" : 1
                                 },
                                 "propertyValues" : {
@@ -1569,8 +1569,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 2,
+                                  "sm" : 3,
+                                  "md" : 3,
                                   "lg" : 3
                                 },
                                 "propertyValues" : {
@@ -1701,7 +1701,7 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
+                                  "sm" : 3,
                                   "md" : 3,
                                   "lg" : 3
                                 },
@@ -1835,8 +1835,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 4,
+                                  "sm" : 2,
+                                  "md" : 2,
                                   "lg" : 2
                                 },
                                 "propertyValues" : {
@@ -1864,8 +1864,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 4,
+                                  "sm" : 8,
+                                  "md" : 8,
                                   "lg" : 8
                                 },
                                 "propertyValues" : {
@@ -1891,8 +1891,8 @@
                                       "type" : "component",
                                       "dimension" : {
                                         "xs" : 12,
-                                        "sm" : 12,
-                                        "md" : 2,
+                                        "sm" : 3,
+                                        "md" : 3,
                                         "lg" : 3
                                       },
                                       "propertyValues" : {
@@ -1978,9 +1978,9 @@
                                     {
                                       "type" : "component",
                                       "dimension" : {
-                                        "xs" : 12,
-                                        "sm" : 12,
-                                        "md" : 2,
+                                        "xs" : 4,
+                                        "sm" : 3,
+                                        "md" : 3,
                                         "lg" : 3
                                       },
                                       "propertyValues" : {
@@ -2066,9 +2066,9 @@
                                     {
                                       "type" : "component",
                                       "dimension" : {
-                                        "xs" : 12,
-                                        "sm" : 12,
-                                        "md" : 2,
+                                        "xs" : 4,
+                                        "sm" : 3,
+                                        "md" : 3,
                                         "lg" : 3
                                       },
                                       "propertyValues" : {
@@ -2155,8 +2155,8 @@
                                     {
                                       "type" : "component",
                                       "dimension" : {
-                                        "xs" : 12,
-                                        "sm" : 12,
+                                        "xs" : 4,
+                                        "sm" : 3,
                                         "md" : 3,
                                         "lg" : 3
                                       },
@@ -2229,8 +2229,8 @@
                                 "type" : "container",
                                 "dimension" : {
                                   "xs" : 12,
-                                  "sm" : 12,
-                                  "md" : 4,
+                                  "sm" : 2,
+                                  "md" : 2,
                                   "lg" : 2
                                 },
                                 "propertyValues" : {
@@ -2256,6 +2256,97 @@
                               }
                             ]
                           ]
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "failedTaskData.displayedFailedTasks.length == 0"
+                            },
+                            "disabled" : {
+                              "type" : "expression",
+                              "value" : "failedTaskData.displayedFailedTasks.length % failedTaskData.numberOfTasksPerPage> 0 || (failedTaskData.numberOfFailedTasksReturned=== 0 && failedTaskData.failedTasksNextResults.length == 0)"
+                            },
+                            "label" : {
+                              "type" : "interpolation",
+                              "value" : "Load more tasks"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "center"
+                            },
+                            "buttonStyle" : {
+                              "type" : "constant",
+                              "value" : "link"
+                            },
+                            "action" : {
+                              "type" : "constant",
+                              "value" : "GET"
+                            },
+                            "assign" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "url" : {
+                              "type" : "interpolation",
+                              "value" : "../API/bpm/flowNode?{{failedTaskCtrl.failedTasksQueryParameters(failedTaskData.pageId)}}"
+                            },
+                            "responseStatusCode" : {
+                              "type" : "variable",
+                              "value" : ""
+                            },
+                            "dataToSend" : {
+                              "type" : "constant"
+                            },
+                            "dataFromSuccess" : {
+                              "type" : "variable",
+                              "value" : "failedTaskData.failedTasksNextResults"
+                            },
+                            "closeOnSuccess" : {
+                              "type" : "constant",
+                              "value" : false
+                            },
+                            "dataFromError" : {
+                              "type" : "variable",
+                              "value" : ""
+                            },
+                            "targetUrlOnSuccess" : {
+                              "type" : "interpolation"
+                            },
+                            "collectionToModify" : {
+                              "type" : "variable"
+                            },
+                            "modalId" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "collectionPosition" : {
+                              "type" : "constant",
+                              "value" : "Last"
+                            },
+                            "valueToAdd" : {
+                              "type" : "constant"
+                            },
+                            "removeItem" : {
+                              "type" : "variable"
+                            }
+                          },
+                          "reference" : "9e8cab47-82bb-4b14-8671-5998371407a9",
+                          "hasValidationError" : false,
+                          "id" : "pbButton"
                         }
                       ]
                     ]
@@ -3788,6 +3879,7 @@
         "    tasksForNextPage: [],",
         "    pageId: 0, ",
         "    numberOfTasksPerPage: 10,",
+        "    numberOfFailedTasksReturned: 0,",
         "    processesOptions: ",
         "        [{ displayName: uiTranslate(\"All processes\"),",
         "            version: uiTranslate(\"all versions\")",
@@ -3810,13 +3902,6 @@
       ],
       "exposed" : false
     },
-    "numberOfTasksReturned" : {
-      "type" : "constant",
-      "value" : [
-        "false"
-      ],
-      "exposed" : false
-    },
     "failedTaskHandler" : {
       "type" : "expression",
       "value" : [
@@ -3829,10 +3914,28 @@
         "    $data.failedTaskData.pageId = 2;",
         "    $data.failedTaskData.tasksForNextPage = $data.failedTaskUrl.slice($data.failedTaskData.numberOfTasksPerPage);",
         "    // saving the other half to be displayed later",
-        "    $data.numberOfTasksReturned = $data.failedTaskData.tasksForNextPage.length;",
+        "    $data.failedTaskData.numberOfFailedTasksReturned = $data.failedTaskData.tasksForNextPage.length;",
         "    // set open cases to undefined as the script is triggered when click on load more cases button",
         "    // and to prevent this block of code from being executed (prevent resetting the displayedOpenCases)",
         "    $data.failedTaskUrl = undefined; ",
+        "}",
+        "",
+        "// add next page of tasks to the list of next tasks to display",
+        "// display the next tasks from the memory",
+        "if($data.failedTaskData.failedTasksNextResults && $data.failedTaskData.failedTasksNextResults.length){",
+        "    $data.failedTaskData.displayedFailedTasks = $data.failedTaskData.displayedFailedTasks.concat($data.failedTaskData.tasksForNextPage);",
+        "    $data.failedTaskData.pageId++;",
+        "    $data.failedTaskData.tasksForNextPage = $data.failedTaskData.failedTasksNextResults;",
+        "    $data.failedTaskData.numberOfFailedTasksReturned = $data.failedTaskData.tasksForNextPage.length;",
+        "    $data.failedTaskData.failedTasksNextResults = undefined;",
+        "}",
+        "",
+        "// when there are no more tasks in the memory",
+        "if($data.failedTaskData.numberOfFailedTasksReturned > 0 && $data.failedTaskData.failedTasksNextResults && $data.failedTaskData.failedTasksNextResults.length == 0){",
+        "    $data.failedTaskData.displayedFailedTasks = $data.failedTaskData.displayedFailedTasks.concat($data.failedTaskData.tasksForNextPage);",
+        "    $data.failedTaskData.tasksForNextPage = undefined;",
+        "    $data.failedTaskData.failedTasksNextResults = undefined;",
+        "    $data.failedTaskData.numberOfFailedTasksReturned = 0;",
         "}"
       ],
       "exposed" : false
