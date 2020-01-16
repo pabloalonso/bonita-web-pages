@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "AdminTaskListBonitaV1",
   "name" : "AdminTaskListBonitaV1",
-  "lastUpdate" : 1579182062041,
+  "lastUpdate" : 1579190701058,
   "rows" : [
     [
       {
@@ -553,7 +553,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "Highest"
+                                          "value" : "{{\"Highest\"|uiTranslate}}"
                                         },
                                         "alignment" : {
                                           "type" : "constant",
@@ -605,7 +605,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "High"
+                                          "value" : "{{\"High\"|uiTranslate}}"
                                         },
                                         "alignment" : {
                                           "type" : "constant",
@@ -657,7 +657,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "Normal"
+                                          "value" : "{{\"Normal\"|uiTranslate}}"
                                         },
                                         "alignment" : {
                                           "type" : "constant",
@@ -709,7 +709,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "Low"
+                                          "value" : "{{\"Low\"|uiTranslate}}"
                                         },
                                         "alignment" : {
                                           "type" : "constant",
@@ -759,7 +759,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "Lowest"
+                                          "value" : "{{\"Lowest\"|uiTranslate}}"
                                         },
                                         "alignment" : {
                                           "type" : "constant",
