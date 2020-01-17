@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.24",
   "id" : "AdminTaskListBonitaV1",
   "name" : "AdminTaskListBonitaV1",
-  "lastUpdate" : 1579190701058,
+  "lastUpdate" : 1579274830287,
   "rows" : [
     [
       {
@@ -151,7 +151,7 @@
                     },
                     "title" : {
                       "type" : "interpolation",
-                      "value" : "{{\"Failed\" | uiTranslate}}"
+                      "value" : "{{\"Failed flow nodes\" | uiTranslate}}"
                     }
                   },
                   "reference" : "d0fdad82-ae7c-44b3-8209-2dfb5559bb88",
@@ -242,7 +242,7 @@
                                   },
                                   "availableValues" : {
                                     "type" : "expression",
-                                    "value" : "failedTaskData.processesOptions"
+                                    "value" : "failedFlowNodeData.processesOptions"
                                   },
                                   "displayedKey" : {
                                     "type" : "constant",
@@ -254,7 +254,7 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "failedTaskData.filters.processId"
+                                    "value" : "failedFlowNodeData.filters.processId"
                                   }
                                 },
                                 "reference" : "013cedd0-9cde-4617-94b5-3f2a7b708ff8",
@@ -308,7 +308,7 @@
                                   },
                                   "availableValues" : {
                                     "type" : "expression",
-                                    "value" : "failedTaskData.sortByOptions"
+                                    "value" : "failedFlowNodeData.sortByOptions"
                                   },
                                   "displayedKey" : {
                                     "type" : "constant",
@@ -320,7 +320,7 @@
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "failedTaskData.filters.sortOrder"
+                                    "value" : "failedFlowNodeData.filters.sortOrder"
                                   }
                                 },
                                 "reference" : "b813beb9-6c97-46de-8109-fa8490a77f43",
@@ -378,11 +378,11 @@
                                   },
                                   "placeholder" : {
                                     "type" : "interpolation",
-                                    "value" : "Search by task name"
+                                    "value" : "Search by name"
                                   },
                                   "value" : {
                                     "type" : "variable",
-                                    "value" : "failedTaskData.filters.searchValue"
+                                    "value" : "failedFlowNodeData.filters.searchValue"
                                   },
                                   "type" : {
                                     "type" : "constant",
@@ -427,7 +427,7 @@
                             },
                             "repeatedCollection" : {
                               "type" : "variable",
-                              "value" : "failedTaskData.displayedFailedTasks"
+                              "value" : "failedFlowNodeData.displayedFailedFlowNodes"
                             }
                           },
                           "reference" : "04d89a54-3682-415a-bcaa-5ab1507cb4c8",
@@ -866,7 +866,7 @@
                                               },
                                               "text" : {
                                                 "type" : "interpolation",
-                                                "value" : "{{\"Task Id\"|uiTranslate}}"
+                                                "value" : "{{\"Id\"|uiTranslate}}"
                                               },
                                               "alignment" : {
                                                 "type" : "constant",
@@ -998,7 +998,7 @@
                                               },
                                               "text" : {
                                                 "type" : "interpolation",
-                                                "value" : "{{\"Task name\"|uiTranslate}}"
+                                                "value" : "{{\"Name\"|uiTranslate}}"
                                               },
                                               "alignment" : {
                                                 "type" : "constant",
@@ -1130,7 +1130,7 @@
                                               },
                                               "text" : {
                                                 "type" : "interpolation",
-                                                "value" : "{{\"Task display name\"|uiTranslate}}"
+                                                "value" : "{{\"Display name\"|uiTranslate}}"
                                               },
                                               "alignment" : {
                                                 "type" : "constant",
@@ -1905,7 +1905,7 @@
                                         },
                                         "text" : {
                                           "type" : "interpolation",
-                                          "value" : "<i class=\"glyphicon glyphicon-option-horizontal\"></i>"
+                                          "value" : "<i class=\"glyphicon glyphicon-option-horizontal\" title=\"{{\"More\" | uiTranslate}}\"></i>"
                                         },
                                         "type" : {
                                           "type" : "constant",
@@ -1917,7 +1917,7 @@
                                         },
                                         "pageToken" : {
                                           "type" : "constant",
-                                          "value" : "adminTaskDetails"
+                                          "value" : "adminFlowNodeDetails"
                                         },
                                         "processName" : {
                                           "type" : "constant"
@@ -1979,15 +1979,51 @@
                             },
                             "hidden" : {
                               "type" : "expression",
-                              "value" : "failedTaskData.displayedFailedTasks.length == 0"
+                              "value" : "failedFlowNodeData.displayedFailedFlowNodes.length"
+                            },
+                            "text" : {
+                              "type" : "interpolation",
+                              "value" : "No failed flow nodes to display"
+                            },
+                            "level" : {
+                              "type" : "constant",
+                              "value" : "Level 4"
+                            },
+                            "alignment" : {
+                              "type" : "constant",
+                              "value" : "center"
+                            }
+                          },
+                          "reference" : "6cb2c844-6622-4d57-a521-a069e38d1429",
+                          "hasValidationError" : false,
+                          "id" : "pbTitle"
+                        }
+                      ],
+                      [
+                        {
+                          "type" : "component",
+                          "dimension" : {
+                            "xs" : 12,
+                            "sm" : 12,
+                            "md" : 12,
+                            "lg" : 12
+                          },
+                          "propertyValues" : {
+                            "cssClasses" : {
+                              "type" : "constant",
+                              "value" : ""
+                            },
+                            "hidden" : {
+                              "type" : "expression",
+                              "value" : "failedFlowNodeData.displayedFailedFlowNodes.length == 0"
                             },
                             "disabled" : {
                               "type" : "expression",
-                              "value" : "failedTaskData.displayedFailedTasks.length % failedTaskData.numberOfTasksPerPage> 0 || (failedTaskData.numberOfFailedTasksReturned=== 0 && failedTaskData.failedTasksNextResults.length == 0)"
+                              "value" : "failedFlowNodeData.displayedFailedFlowNodes.length % failedFlowNodeData.numberOfFlowNodesPerPage> 0 || (failedFlowNodeData.numberOfFailedFlowNodesReturned=== 0 && failedFlowNodeData.failedFlowNodesNextResults.length == 0)"
                             },
                             "label" : {
                               "type" : "interpolation",
-                              "value" : "Load more tasks"
+                              "value" : "Load more flow nodes"
                             },
                             "alignment" : {
                               "type" : "constant",
@@ -2007,7 +2043,7 @@
                             },
                             "url" : {
                               "type" : "interpolation",
-                              "value" : "../API/bpm/flowNode?{{failedTaskCtrl.failedTasksQueryParameters(failedTaskData.pageId)}}"
+                              "value" : "../API/bpm/flowNode?{{failedFlowNodeCtrl.failedFlowNodesQueryParameters(failedFlowNodeData.pageId)}}"
                             },
                             "responseStatusCode" : {
                               "type" : "variable",
@@ -2018,7 +2054,7 @@
                             },
                             "dataFromSuccess" : {
                               "type" : "variable",
-                              "value" : "failedTaskData.failedTasksNextResults"
+                              "value" : "failedFlowNodeData.failedFlowNodesNextResults"
                             },
                             "closeOnSuccess" : {
                               "type" : "constant",
@@ -2200,40 +2236,40 @@
     "processes" : {
       "type" : "url",
       "value" : [
-        "../API/bpm/process?p=0&c=10&&o=displayName%20ASC"
+        "../API/bpm/process?c=999&p=0&o=displayName%20ASC"
       ],
       "exposed" : false
     },
-    "failedTaskUrl" : {
+    "failedFlowNodeUrl" : {
       "type" : "url",
       "value" : [
-        "../API/bpm/flowNode?{{failedTaskCtrl.failedTasksQueryParameters(0)}}"
+        "../API/bpm/flowNode?{{failedFlowNodeCtrl.failedFlowNodesQueryParameters(0)}}"
       ],
       "exposed" : false
     },
-    "failedTaskCtrl" : {
+    "failedFlowNodeCtrl" : {
       "type" : "expression",
       "value" : [
         "return {",
-        "    failedTasksQueryParameters: function(pageId) {",
-        "        var tasksPerPage = $data.failedTaskData.numberOfTasksPerPage;",
+        "    failedFlowNodesQueryParameters: function(pageId) {",
+        "        var flowNodesPerPage = $data.failedFlowNodeData.numberOfFlowNodesPerPage;",
         "        ",
         "        if(pageId === 0){",
         "            //on first call we need load next page",
-        "            tasksPerPage *= 2;",
+        "            flowNodesPerPage *= 2;",
         "        }",
-        "        var queryParameters = \"c=\" + tasksPerPage + \"&p=\" + pageId + \"&f=state=failed&d=rootContainerId&d=assigned_id\";",
+        "        var queryParameters = \"c=\" + flowNodesPerPage + \"&p=\" + pageId + \"&f=state=failed&d=rootContainerId&d=assigned_id\";",
         "        ",
-        "        if($data.failedTaskData.filters.processId){",
-        "            queryParameters += \"&f=processId=\" + $data.failedTaskData.filters.processId;",
-        "        }",
-        "        ",
-        "        if($data.failedTaskData.filters.sortOrder){",
-        "            queryParameters += \"&o=\" + $data.failedTaskData.filters.sortOrder;",
+        "        if($data.failedFlowNodeData.filters.processId){",
+        "            queryParameters += \"&f=processId=\" + $data.failedFlowNodeData.filters.processId;",
         "        }",
         "        ",
-        "        if($data.failedTaskData.filters.searchValue){",
-        "            queryParameters += \"&s=\" +  $data.failedTaskData.filters.searchValue;",
+        "        if($data.failedFlowNodeData.filters.sortOrder){",
+        "            queryParameters += \"&o=\" + $data.failedFlowNodeData.filters.sortOrder;",
+        "        }",
+        "        ",
+        "        if($data.failedFlowNodeData.filters.searchValue){",
+        "            queryParameters += \"&s=\" +  $data.failedFlowNodeData.filters.searchValue;",
         "        }",
         "        ",
         "        return queryParameters;",
@@ -2242,22 +2278,22 @@
       ],
       "exposed" : false
     },
-    "failedTaskData" : {
+    "failedFlowNodeData" : {
       "type" : "expression",
       "value" : [
         "return {",
-        "    task: {},",
-        "    tasksForNextPage: [],",
+        "    flowNode: {},",
+        "    flowNodesForNextPage: [],",
         "    pageId: 0, ",
-        "    numberOfTasksPerPage: 10,",
-        "    numberOfFailedTasksReturned: 0,",
+        "    numberOfFlowNodesPerPage: 10,",
+        "    numberOfFailedFlowNodesReturned: 0,",
         "    processesOptions: ",
         "        [{ displayName: uiTranslate(\"All processes\"),",
         "            version: uiTranslate(\"all versions\")",
         "        }].concat($data.processes),",
         "    sortByOptions: [   ",
-        "        { displayKey: \"Task name (Asc)\", returnKey: \"name+ASC\" },",
-        "        { displayKey: \"Task name (Desc)\", returnKey: \"name+DESC\" },",
+        "        { displayKey: \"Flow node name (Asc)\", returnKey: \"name+ASC\" },",
+        "        { displayKey: \"Flow node name (Desc)\", returnKey: \"name+DESC\" },",
         "        { displayKey: \"Failed on (Newest first)\", returnKey: \"lastUpdateDate+DESC\" },",
         "        { displayKey: \"Failed on (Oldest first)\", returnKey: \"lastUpdateDate+ASC\" }",
         "    ],",
@@ -2266,46 +2302,46 @@
         "        sortOrder: \"\",",
         "        searchValue: \"\"",
         "    },",
-        "    failedTasksNextResults: undefined,",
-        "    displayedFailedTasks: []",
+        "    failedFlowNodesNextResults: undefined,",
+        "    displayedFailedFlowNodes: []",
         "};"
       ],
       "exposed" : false
     },
-    "failedTaskHandler" : {
+    "failedFlowNodeHandler" : {
       "type" : "expression",
       "value" : [
-        "//Failed tasks",
-        "// display the first page of failed tasks on page load or when the filter change",
-        "if($data.failedTaskUrl){",
+        "//Failed flowNodes",
+        "// display the first page of failed flowNodes on page load or when the filter change",
+        "if($data.failedFlowNodeUrl){",
         "    // display half the elements loaded",
-        "    $data.failedTaskData.displayedFailedTasks = $data.failedTaskUrl.slice(0, $data.failedTaskData.numberOfTasksPerPage);",
+        "    $data.failedFlowNodeData.displayedFailedFlowNodes = $data.failedFlowNodeUrl.slice(0, $data.failedFlowNodeData.numberOfFlowNodesPerPage);",
         "    // set the next page to be requested to 2 since the first page is in the memory",
-        "    $data.failedTaskData.pageId = 2;",
-        "    $data.failedTaskData.tasksForNextPage = $data.failedTaskUrl.slice($data.failedTaskData.numberOfTasksPerPage);",
+        "    $data.failedFlowNodeData.pageId = 2;",
+        "    $data.failedFlowNodeData.flowNodesForNextPage = $data.failedFlowNodeUrl.slice($data.failedFlowNodeData.numberOfFlowNodesPerPage);",
         "    // saving the other half to be displayed later",
-        "    $data.failedTaskData.numberOfFailedTasksReturned = $data.failedTaskData.tasksForNextPage.length;",
+        "    $data.failedFlowNodeData.numberOfFailedFlowNodesReturned = $data.failedFlowNodeData.flowNodesForNextPage.length;",
         "    // set open cases to undefined as the script is triggered when click on load more cases button",
         "    // and to prevent this block of code from being executed (prevent resetting the displayedOpenCases)",
-        "    $data.failedTaskUrl = undefined; ",
+        "    $data.failedFlowNodeUrl = undefined; ",
         "}",
         "",
-        "// add next page of tasks to the list of next tasks to display",
-        "// display the next tasks from the memory",
-        "if($data.failedTaskData.failedTasksNextResults && $data.failedTaskData.failedTasksNextResults.length){",
-        "    $data.failedTaskData.displayedFailedTasks = $data.failedTaskData.displayedFailedTasks.concat($data.failedTaskData.tasksForNextPage);",
-        "    $data.failedTaskData.pageId++;",
-        "    $data.failedTaskData.tasksForNextPage = $data.failedTaskData.failedTasksNextResults;",
-        "    $data.failedTaskData.numberOfFailedTasksReturned = $data.failedTaskData.tasksForNextPage.length;",
-        "    $data.failedTaskData.failedTasksNextResults = undefined;",
+        "// add next page of flowNodes to the list of next flowNodes to display",
+        "// display the next flowNodes from the memory",
+        "if($data.failedFlowNodeData.failedFlowNodesNextResults && $data.failedFlowNodeData.failedFlowNodesNextResults.length){",
+        "    $data.failedFlowNodeData.displayedFailedFlowNodes = $data.failedFlowNodeData.displayedFailedFlowNodes.concat($data.failedFlowNodeData.flowNodesForNextPage);",
+        "    $data.failedFlowNodeData.pageId++;",
+        "    $data.failedFlowNodeData.flowNodesForNextPage = $data.failedFlowNodeData.failedFlowNodesNextResults;",
+        "    $data.failedFlowNodeData.numberOfFailedFlowNodesReturned = $data.failedFlowNodeData.flowNodesForNextPage.length;",
+        "    $data.failedFlowNodeData.failedFlowNodesNextResults = undefined;",
         "}",
         "",
-        "// when there are no more tasks in the memory",
-        "if($data.failedTaskData.numberOfFailedTasksReturned > 0 && $data.failedTaskData.failedTasksNextResults && $data.failedTaskData.failedTasksNextResults.length == 0){",
-        "    $data.failedTaskData.displayedFailedTasks = $data.failedTaskData.displayedFailedTasks.concat($data.failedTaskData.tasksForNextPage);",
-        "    $data.failedTaskData.tasksForNextPage = undefined;",
-        "    $data.failedTaskData.failedTasksNextResults = undefined;",
-        "    $data.failedTaskData.numberOfFailedTasksReturned = 0;",
+        "// when there are no more flowNodes in the memory",
+        "if($data.failedFlowNodeData.numberOfFailedFlowNodesReturned > 0 && $data.failedFlowNodeData.failedFlowNodesNextResults && $data.failedFlowNodeData.failedFlowNodesNextResults.length == 0){",
+        "    $data.failedFlowNodeData.displayedFailedFlowNodes = $data.failedFlowNodeData.displayedFailedFlowNodes.concat($data.failedFlowNodeData.flowNodesForNextPage);",
+        "    $data.failedFlowNodeData.flowNodesForNextPage = undefined;",
+        "    $data.failedFlowNodeData.failedFlowNodesNextResults = undefined;",
+        "    $data.failedFlowNodeData.numberOfFailedFlowNodesReturned = 0;",
         "}"
       ],
       "exposed" : false
