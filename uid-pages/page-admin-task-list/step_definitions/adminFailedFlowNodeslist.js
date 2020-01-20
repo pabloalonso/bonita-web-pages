@@ -13,9 +13,21 @@ given("The filter response {string} is defined", (filterType) => {
             createRouteWithResponse(defaultRequestUrl, '', 'failedFlowNodes5Route', 'failedFlowNodes5');
             break;
         case 'process name':
-            createRouteWithResponse(processUrl, processFilters, 'processesRoute', 'processes', 0, 999);
+            createRouteWithResponse(processUrl, processFilters, 'processesRoute', 'processes');
             createRoute('&f=processId=8617198282405797017', 'generateRandomCasesRoute');
-            createRoute('&f=processId=7623202965572839246', 'unUsedProcessRoute');
+
+            createRouteWithResponse(processUrl, processFilters, 'emptyResultRoute', 'emptyResult');
+            createRoute('&f=processId=8617198282405797018', 'unUsedProcessRoute');
+            break;
+        case 'sort by':
+            createRoute('&o=name+ASC', 'sortByNameAscRoute');
+            createRoute('&o=name+DESC', 'sortByNameDescRoute');
+            createRoute('&o=lastUpdateDate+ASC', 'sortByUpdateDateAscRoute');
+            createRoute('&o=lastUpdateDate+DESC', 'sortByUpdateDateDescRoute');
+            break;
+        case 'search by name':
+            createRoute('&s=Alowscenario', 'searchRoute');
+            createRouteWithResponse(defaultRequestUrl,'&s=Search term with no match', 'emptyResultRoute', 'emptyResult');
             break;
         default:
             throw new Error("Unsupported case");
@@ -64,15 +76,16 @@ when("I put {string} in {string} filter field", (filterValue, filterType) => {
 
     function selectFilterContentTypeOption(filterValue) {
         switch (filterValue) {
-            case 'All processes':
+            case 'All processes (all versions)':
                 cy.get('select').eq(0).select('0');
                 cy.wait('@generateRandomCasesRoute');
                 break;
-            case 'generateRandomCases':
+            case 'generateRandomCases (1.0)':
                 cy.get('select').eq(0).select('1');
                 break;
-            case 'unUsedProcesses':
+            case 'New vacation request with means of transportation (2.0)':
                 cy.get('select').eq(0).select('2');
+                cy.wait('@unUsedProcessRoute');
                 break;
             default:
                 throw new Error("Unsupported case");
@@ -81,16 +94,16 @@ when("I put {string} in {string} filter field", (filterValue, filterType) => {
 
     function selectSortByOption(filterValue) {
         switch (filterValue) {
-            case 'Resource name (Asc)':
+            case 'Flow node name (Asc)':
                 cy.get('select').eq(1).select('0');
                 break;
-            case 'Resource name (Desc)':
+            case 'Flow node name (Desc)':
                 cy.get('select').eq(1).select('1');
                 break;
-            case 'Updated - newest first':
+            case 'Failed on (Newest first)':
                 cy.get('select').eq(1).select('2');
                 break;
-            case 'Updated - oldest first':
+            case 'Failed on (Oldest first)':
                 cy.get('select').eq(1).select('3');
                 break;
             default:
@@ -101,6 +114,10 @@ when("I put {string} in {string} filter field", (filterValue, filterType) => {
     function searchForValue(filterValue) {
         cy.get('pb-input input').type(filterValue);
     }
+});
+
+when("I erase the search filter", () => {
+    cy.get('pb-input input').clear();
 });
 
 then("The failed flow nodes list have the correct information", () => {
@@ -218,4 +235,37 @@ then("The failed flow nodes list have the correct information", () => {
 
 then("A list of {string} failed flow nodes is displayed", (nbrOfFailedFlowNodes) => {
     cy.get('.task-item').should('have.length', nbrOfFailedFlowNodes);
+});
+
+then("The api call is made for {string}", (filterValue) => {
+    switch (filterValue) {
+        case 'generateRandomCases (1.0)':
+            cy.wait('@processesRoute');
+            break;
+        case 'New vacation request with means of transportation (2.0)':
+            cy.wait('@emptyResultRoute');
+            break;
+        case 'Flow node name (Asc)':
+            cy.wait('@sortByNameAscRoute');
+            break;
+        case 'Flow node name (Desc)':
+            cy.wait('@sortByNameDescRoute');
+            break;
+        case 'Failed on (Newest first)':
+            cy.wait('@sortByUpdateDateDescRoute');
+            break;
+        case 'Failed on (Oldest first)':
+            cy.wait('@sortByUpdateDateAscRoute');
+            break;
+        case 'Alowscenario':
+            cy.wait('@searchRoute');
+            break;
+        default:
+            throw new Error("Unsupported case");
+    }
+});
+
+then("No tasks are available", () => {
+    cy.get('.task-item').should('have.length', 0);
+    cy.contains('No failed flow nodes to display').should('be.visible');
 });
