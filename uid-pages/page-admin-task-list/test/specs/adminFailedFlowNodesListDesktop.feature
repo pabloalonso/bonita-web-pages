@@ -14,9 +14,9 @@ Feature: The failed flow nodes list in desktop resolution
 #    Then The api call is made for "generateRandomCases (1.0)"
 #    When I put "All processes (all versions)" in "process name" filter field
 #    Then A list of "5" failed flow nodes is displayed
-#    When I put "New vacation request with means of transportation (2.0)" in "process name" filter field
-#    Then The api call is made for "New vacation request with means of transportation (2.0)"
-#    And No failed tasks are available
+#    When I put "unUsedProcess" in "process name" filter field
+#    Then The api call is made for "unUsedProcess"
+#    And No tasks are available
 
   Scenario: The failed flow nodes list sort by works correctly
     Given The filter response "default filter" is defined
@@ -43,3 +43,29 @@ Feature: The failed flow nodes list in desktop resolution
     Then A list of "5" failed flow nodes is displayed
     When I put "Search term with no match" in "search" filter field
     Then No tasks are available
+
+  Scenario: The user case details has the correct link to case list
+    Given The filter response "default filter" is defined
+    When I visit the failed flow nodes list page
+    Then The more button has correct href
+
+  Scenario: Load more button works correctly
+    And The filter response "enable load more" is defined
+    When I visit the failed flow nodes list page
+    Then A list of "10" failed flow nodes is displayed
+    When I click on Load more flow nodes button
+    Then A list of "20" failed flow nodes is displayed
+    When I click on Load more flow nodes button
+    Then A list of "30" failed flow nodes is displayed
+    When I click on Load more flow nodes button
+    Then A list of "35" failed flow nodes is displayed
+    And The load more flow nodes button is disabled
+
+  Scenario: [Limitation] Load more is not disabled when result is a multiple of count
+    Given The filter response "enable 20 load more" is defined
+    When I visit the failed flow nodes list page
+    Then A list of "10" failed flow nodes is displayed
+    When I click on Load more flow nodes button
+    Then A list of "20" failed flow nodes is displayed
+    When I click on Load more flow nodes button
+    Then The load more flow nodes button is disabled

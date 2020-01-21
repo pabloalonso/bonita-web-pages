@@ -5,32 +5,48 @@ const failedFlowNodesUrl = 'API/bpm/flowNode?';
 const defaultRequestUrl = urlPrefix + failedFlowNodesUrl + 'c=20&p=0' + defaultFilters;
 const processUrl = urlPrefix + 'API/bpm/process?';
 const processFilters = 'c=999&p=0&o=displayName ASC';
+const defaultSortOrder = '&o=lastUpdateDate+DESC';
+const failedFlowNodeDetailsUrl = '/bonita/apps/APP_TOKEN_PLACEHOLDER/adminFlowNodeDetails?id=60002';
 
 given("The filter response {string} is defined", (filterType) => {
     cy.server();
     switch (filterType) {
         case 'default filter':
-            createRouteWithResponse(defaultRequestUrl, '', 'failedFlowNodes5Route', 'failedFlowNodes5');
+            createRouteWithResponse(defaultRequestUrl, '', 'failedFlowNodes5Route', 'failedFlowNodes5', 0, 999);
             break;
         case 'process name':
             createRouteWithResponse(processUrl, processFilters, 'processesRoute', 'processes');
             createRoute('&f=processId=8617198282405797017', 'generateRandomCasesRoute');
-
-            createRouteWithResponse(processUrl, processFilters, 'emptyResultRoute', 'emptyResult');
-            createRoute('&f=processId=8617198282405797018', 'unUsedProcessRoute');
+            // createRouteWithResponse(processUrl, processFilters, 'emptyResultRoute', 'emptyResult');
+            createRoute('&f=processId=7623202965572839246', 'unUsedProcessRoute');
             break;
         case 'sort by':
             createRoute('&o=name+ASC', 'sortByNameAscRoute');
             createRoute('&o=name+DESC', 'sortByNameDescRoute');
             createRoute('&o=lastUpdateDate+ASC', 'sortByUpdateDateAscRoute');
-            createRoute('&o=lastUpdateDate+DESC', 'sortByUpdateDateDescRoute');
+            createRoute(defaultSortOrder, 'sortByUpdateDateDescRoute');
             break;
         case 'search by name':
             createRoute('&s=Alowscenario', 'searchRoute');
             createRouteWithResponse(defaultRequestUrl,'&s=Search term with no match', 'emptyResultRoute', 'emptyResult');
             break;
+        case 'enable load more':
+            createRouteWithMoreResponse('', 'failedFlowNodes20Route', 'failedFlowNodes20');
+            createRouteWithResponseAndPagination('', 'failedFlowNodes10Route', 'failedFlowNodes10', 2, 10);
+            createRouteWithResponseAndPagination('', 'failedFlowNodes5Route', 'failedFlowNodes5', 3, 10);
+            createRouteWithResponseAndPagination('', 'emptyResultRoute', 'emptyResult', 4, 10);
+            break;
+        case 'enable 20 load more':
+            createRouteWithMoreResponse('', 'failedFlowNodes20Route', 'failedFlowNodes20');
+            createRouteWithResponseAndPagination('', 'emptyResultRoute', 'emptyResult', 2, 10);
+            break;
+
         default:
             throw new Error("Unsupported case");
+    }
+
+    function createRouteWithMoreResponse(queryParameter, routeName, response){
+        createRouteWithResponseAndPagination(queryParameter, routeName, response, 0, 20);
     }
 
     function createRoute(queryParameter, routeName) {
@@ -53,10 +69,26 @@ given("The filter response {string} is defined", (filterType) => {
             response: responseValue
         }).as(routeName);
     }
+
+    function createRouteWithResponseAndPagination(queryParameter, routeName, response, page, count) {
+        const loadMoreUrl = urlPrefix + failedFlowNodesUrl + 'c=' + count + '&p=' + page + defaultFilters;
+        let responseValue = undefined;
+        if (response) {
+            cy.fixture('json/' + response + '.json').as(response);
+            responseValue = '@' + response;
+        }
+
+        cy.route({
+            method: 'GET',
+            url: loadMoreUrl + queryParameter,
+            response: responseValue
+        }).as(routeName);
+    }
 });
 
 when("I visit the failed flow nodes list page", () => {
     cy.visit(url);
+    cy.wait(1000)
 });
 
 when("I put {string} in {string} filter field", (filterValue, filterType) => {
@@ -83,7 +115,7 @@ when("I put {string} in {string} filter field", (filterValue, filterType) => {
             case 'generateRandomCases (1.0)':
                 cy.get('select').eq(0).select('1');
                 break;
-            case 'New vacation request with means of transportation (2.0)':
+            case 'unUsedProcess':
                 cy.get('select').eq(0).select('2');
                 cy.wait('@unUsedProcessRoute');
                 break;
@@ -118,6 +150,10 @@ when("I put {string} in {string} filter field", (filterValue, filterType) => {
 
 when("I erase the search filter", () => {
     cy.get('pb-input input').clear();
+});
+
+when("I click on Load more flow nodes button", () => {
+    cy.get('button').contains('Load more flow nodes').click();
 });
 
 then("The failed flow nodes list have the correct information", () => {
@@ -242,8 +278,8 @@ then("The api call is made for {string}", (filterValue) => {
         case 'generateRandomCases (1.0)':
             cy.wait('@processesRoute');
             break;
-        case 'New vacation request with means of transportation (2.0)':
-            cy.wait('@emptyResultRoute');
+        case 'unUsedProcess':
+            cy.wait('@unUsedProcessRoute');
             break;
         case 'Flow node name (Asc)':
             cy.wait('@sortByNameAscRoute');
@@ -268,4 +304,12 @@ then("The api call is made for {string}", (filterValue) => {
 then("No tasks are available", () => {
     cy.get('.task-item').should('have.length', 0);
     cy.contains('No failed flow nodes to display').should('be.visible');
+});
+
+then("The more button has correct href", () => {
+    cy.get('a').eq(3).should('have.attr', 'href', failedFlowNodeDetailsUrl);
+});
+
+then("The load more flow nodes button is disabled", () => {
+    cy.get('button').contains('Load more flow nodes').should('be.disabled');
 });
