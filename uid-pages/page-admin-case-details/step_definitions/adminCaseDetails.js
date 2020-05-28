@@ -37,24 +37,24 @@ given("The response {string} is defined", (responseType) => {
             createRouteWithResponse('API/bpm/humanTask?p=0&c=2147483647&f=state=ready&f=user_id=4&f=caseId=1', 'availableTasksRoute', 'availableTasks');
             break;
         case 'monitor 9 tasks':
-            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '9TasksRoute', '9Tasks');
-            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '9TasksRoute', '9Tasks');
-            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '9TasksRoute', '9Tasks');
+            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '9FailedTasksRoute', '9Tasks');
+            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '9PendingTasksRoute', '9Tasks');
+            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '9DoneTasksRoute', '9Tasks');
             break;
         case 'monitor 10 tasks':
-            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '10TasksRoute', '10Tasks');
-            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '10TasksRoute', '10Tasks');
-            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '10TasksRoute', '10Tasks');
+            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '10FailedTasksRoute', '10Tasks');
+            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '10PendingTasksRoute', '10Tasks');
+            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '10DoneTasksRoute', '10Tasks');
             break;
         case 'monitor 10+ tasks':
-            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '10+TasksRoute', '10+Tasks');
-            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '10+TasksRoute', '10+Tasks');
-            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '10+TasksRoute', '10+Tasks');
+            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '10+FailedTasksRoute', '10+Tasks');
+            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '10+PendingTasksRoute', '10+Tasks');
+            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '10+DoneTasksRoute', '10+Tasks');
             break;
         case 'monitor 0 tasks':
-            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '0TasksRoute', '0Tasks');
-            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '0TasksRoute', '0Tasks');
-            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '0TasksRoute', '0Tasks');
+            createRouteWithResponse("API/bpm/flowNode?p=0&c=11&f=caseId=1&f=state=failed", '0FailedTasksRoute', '0Tasks');
+            createRouteWithResponse("API/bpm/humanTask?p=0&c=11&f=caseId=1&f=state=ready", '0PendingTasksRoute', '0Tasks');
+            createRouteWithResponse("API/bpm/archivedTask?p=0&c=11&f=caseId=1", '0DoneTasksRoute', '0Tasks');
             break;
         case 'process variables':
             createRouteWithResponse(processVariableUrl + '&t=0', 'processVariablesRoute', 'processVariables');
@@ -201,19 +201,27 @@ then("The monitoring have the correct information for {string} tasks", (numberOf
     // Check that the element exist.
     switch (numberOfTasks) {
         case "9":
-            cy.wait('@9TasksRoute');
+            cy.wait('@9FailedTasksRoute');
+            cy.wait('@9PendingTasksRoute');
+            cy.wait('@9DoneTasksRoute');
             cy.get('.item-value').contains('Failed (9), Pending (9), Done (9)');
             break;
         case "10":
-            cy.wait('@10TasksRoute');
+            cy.wait('@10FailedTasksRoute');
+            cy.wait('@10PendingTasksRoute');
+            cy.wait('@10DoneTasksRoute');
             cy.get('.item-value').contains('Failed (10), Pending (10), Done (10)');
             break;
         case "11":
-            cy.wait('@10+TasksRoute');
+            cy.wait('@10+FailedTasksRoute');
+            cy.wait('@10+PendingTasksRoute');
+            cy.wait('@10+DoneTasksRoute');
             cy.get('.item-value').contains('Failed (10+), Pending (10+), Done (10+)');
             break;
         case "0":
-            cy.wait('@0TasksRoute');
+            cy.wait('@0FailedTasksRoute');
+            cy.wait('@0PendingTasksRoute');
+            cy.wait('@0DoneTasksRoute');
             cy.get('.item-value').contains('No task in the task list for this case.');
             break;
     }
